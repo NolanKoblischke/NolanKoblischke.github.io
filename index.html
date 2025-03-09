@@ -118,6 +118,33 @@
     .header-text {
       text-align: left;
     }
+
+    /* Copy button */
+    .copy-btn {
+      background-color: rgba(58, 58, 58, 0.5);
+      color: #BB86FC;
+      border: 1px solid #BB86FC;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-left: 2px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.3s ease;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+    }
+
+    .copy-btn:hover {
+      background-color: rgba(187, 134, 252, 0.7);
+      color: #1E1E1E;
+    }
+
+    .copy-btn.copied {
+      background-color: rgba(3, 218, 198, 0.7);
+      color: #1E1E1E;
+      border-color: #03DAC6;
+    }
   </style>
 </head>
 
@@ -170,6 +197,15 @@
         <em>NeurIPS 2024 Workshop: Foundation Models for Science</em>
         <br>
         <a href="https://arxiv.org/abs/2411.04750" target="_blank">arXiv:2411.04750</a>
+        <button class="copy-btn" data-bibtex="@misc{koblischke2024spectrafmtuningstellarfoundation,
+      title={SpectraFM: Tuning into Stellar Foundation Models}, 
+      author={Nolan Koblischke and Jo Bovy},
+      year={2024},
+      eprint={2411.04750},
+      archivePrefix={arXiv},
+      primaryClass={astro-ph.IM},
+      url={https://arxiv.org/abs/2411.04750}, 
+}">BibTeX</button>
         <p>
           A Transformer-based model capable of processing stellar spectra across any wavelength range.
         </p>
@@ -188,6 +224,18 @@
         <em>Astrophysical Journal</em>, 2024
         <br>
         <a href="https://arxiv.org/abs/2406.19375" target="_blank">arXiv:2406.19375</a>
+        <button class="copy-btn" data-bibtex="@article{Koblischke_2024,
+   title={Calibrating and Standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud Using Small-amplitude Red Giants},
+   volume={974},
+   ISSN={1538-4357},
+   url={http://dx.doi.org/10.3847/1538-4357/ad7095},
+   DOI={10.3847/1538-4357/ad7095},
+   number={2},
+   journal={The Astrophysical Journal},
+   publisher={American Astronomical Society},
+   author={Koblischke, Nolan W. and Anderson, Richard I.},
+   year={2024},
+   month=oct, pages={181} }">BibTeX</button>
         <p>
           Discovered that pulsation impacts the TRGB in the SMC as in the LMC, with older, longer period pulsators leading to a highly accurate TRGB tip measurement.
         </p>
@@ -205,6 +253,19 @@
         <em>Astrophysical Journal Letters</em>, 2024
         <br>
         <a href="https://arxiv.org/abs/2303.04790" target="_blank">arXiv:2303.04790</a>
+        <button class="copy-btn" data-bibtex="@article{Anderson_2024,
+doi = {10.3847/2041-8213/ad284d},
+url = {https://dx.doi.org/10.3847/2041-8213/ad284d},
+year = {2024},
+month = {mar},
+publisher = {The American Astronomical Society},
+volume = {963},
+number = {2},
+pages = {L43},
+author = {Anderson, Richard I. and Koblischke, Nolan W. and Eyer, Laurent},
+title = {Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle},
+journal = {The Astrophysical Journal Letters}
+}">BibTeX</button>
         <p>
           Discovered that red giant pulsation adds a new dimension of the TRGB method, leading to an enhanced method for measuring the Universe's expansion rate.
         </p>
@@ -250,5 +311,31 @@
       <p><a href="https://github.com/jonbarron/jonbarron_website">Website Template</a></p>
     </div>
   </div>
+
+  <!-- JavaScript for copy buttons -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyButtons = document.querySelectorAll('.copy-btn');
+      
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const bibtex = this.getAttribute('data-bibtex');
+          navigator.clipboard.writeText(bibtex).then(() => {
+            // Visual feedback
+            this.textContent = 'Copied!';
+            this.classList.add('copied');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+              this.textContent = 'BibTeX';
+              this.classList.remove('copied');
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
