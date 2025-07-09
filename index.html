@@ -59,8 +59,28 @@
     }
 
     /* Bio spacing */
+    .bio {
+      margin-top: 1.5em;
+    }
+    
     .bio p {
-      margin-bottom: 0.5em;
+      margin-bottom: 0.8em;
+      line-height: 1.8;
+    }
+    
+    .bio-highlight {
+      font-weight: 500;
+      color: #03DAC6;
+    }
+    
+    .bio-section {
+      margin-bottom: 1.2em;
+    }
+    
+    .bio-tools {
+      margin-top: 1.5em;
+      padding-top: 1em;
+      border-top: 1px solid rgba(224, 224, 224, 0.2);
     }
 
     /* Contact info spacing */
@@ -268,11 +288,9 @@
 
     <!-- Social Links -->
     <p class="center-text">
-      <a href="mailto:nolan.koblischke@mail.utoronto.ca">Email</a> &nbsp;/&nbsp;
+      <a href="https://blog.nolank.ca/blog/">Blog</a> &nbsp;/&nbsp;
       <a href="https://www.linkedin.com/in/nolankob/">LinkedIn</a> &nbsp;/&nbsp;
       <a href="https://twitter.com/astro_nolan">X</a> 
-      &nbsp;/&nbsp;
-      <a href="https://bsky.app/profile/astronolan.bsky.social">Bluesky</a>
       &nbsp;/&nbsp;
       <a href="https://github.com/NolanKoblischke/">Github</a>
 
@@ -280,13 +298,22 @@
 
     <!-- Bio -->
     <div class="bio">
-      <p>Currently a Research Intern at <a href="https://polymathic-ai.org/">Polymathic AI</a> - Summer 2025</p>
-      <p>2nd year PhD Student in Astrophysics - University of Toronto - Supervisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a></p>
-      <p>Developing foundation models for Astro</p>
-      <p>Prepping for AGI4Science</p>
-      <p>Previously: UBC Bachelor's in Physics, Minor in Computer Science</p>
-      <p>My LLM tools: <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a>, <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a>, and <a href="https://nolank.ca/astrocoder/">AstroCoder</a>.</p>
-      <p>Latest blog post: <a href="https://blog.nolank.ca/astrocoder/">How we made AstroCoder</a></p>
+      <div class="bio-section">
+        <p><span class="bio-highlight">📍 Currently:</span> Research Intern at <a href="https://polymathic-ai.org/">Polymathic AI</a> - Summer 2025</p>
+        <p><span class="bio-highlight">🎓 PhD:</span> 2nd year Astrophysics @ University of Toronto | Advisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a></p>
+      </div>
+      
+      <div class="bio-section">
+        <p><span class="bio-highlight">🚀 Focus:</span> Developing foundation models for Astrophysics</p>
+        <p><span class="bio-highlight">🔬 Mission:</span> Prepping for AGI4Science</p>
+      </div>
+      
+      <p><span class="bio-highlight">🎯 Background:</span> UBC Physics B.Sc., Computer Science Minor</p>
+      
+      <div class="bio-tools">
+        <p><span class="bio-highlight">🛠️ Built:</span> <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a>, <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a>, and <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
+        <p><span class="bio-highlight">📝 Latest:</span> <a href="https://blog.nolank.ca/astrocoder/">How we made AstroCoder</a></p>
+      </div>
     </div>
 
 
