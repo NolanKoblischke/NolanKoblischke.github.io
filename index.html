@@ -6,41 +6,143 @@
   <meta name="author" content="Nolan Koblischke">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
   <!-- Stylesheet -->
   <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Selection colors */
+    ::selection {
+      background: rgba(187, 134, 252, 0.3);
+      color: #FFFFFF;
+    }
+    
+    ::-moz-selection {
+      background: rgba(187, 134, 252, 0.3);
+      color: #FFFFFF;
+    }
+    
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1A1A1A;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgba(187, 134, 252, 0.5);
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(187, 134, 252, 0.7);
+    }
+    
     /* Base styles */
     body {
       font-size: 18px;
-      line-height: 1.6;
+      line-height: 1.7;
       margin: 0;
       padding: 0;
-      background-color: #1E1E1E; /* Dark gray background */
-      color: #E0E0E0;           /* Light gray text */
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #1A1A1A;
+      color: #F0F0F0;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 20% 30%, rgba(187, 134, 252, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 60%, rgba(3, 218, 198, 0.06) 0%, transparent 40%),
+                  radial-gradient(circle at 40% 80%, rgba(187, 134, 252, 0.04) 0%, transparent 60%);
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(-20px, -20px) rotate(1deg); }
+      66% { transform: translate(20px, -10px) rotate(-1deg); }
+    }
+    
+    body > div {
+      position: relative;
+      z-index: 2;
     }
 
     /* Main name heading */
     .main-name {
-      font-size: 36px;
-      font-weight: bold;
+      font-size: 48px;
+      font-weight: 700;
       margin: 0;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #FFFFFF 0%, #F5F5F5 50%, #E8D8FF 85%, #D4B5FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-tagline {
+      font-size: 18px;
+      color: rgba(240, 240, 240, 0.7);
+      margin: 0.5em 0 1em 0;
+      font-weight: 300;
+      letter-spacing: 0.5px;
     }
 
     /* Standard text and elements */
     p, a, papertitle, heading {
-      font-size: 18px;
+      font-size: 17px;
       margin: 0;
+      letter-spacing: 0.01em;
     }
 
     papertitle {
-      font-weight: bold;
+      font-weight: 600;
       display: inline-block;
+      font-size: 19px;
+      line-height: 1.4;
+      color: #FFFFFF;
+      margin-bottom: 0.4em;
     }
 
     heading {
-      font-weight: bold;
+      font-weight: 600;
       display: block;
-      margin: 1em 0 0.5em;
+      margin: 2em 0 1em;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+      position: relative;
+      padding-bottom: 0.5em;
+    }
+    
+    heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #BB86FC, #03DAC6);
+      border-radius: 2px;
     }
 
     /* Links */
@@ -57,6 +159,33 @@
     .center-text {
       text-align: center;
     }
+    
+    /* Social links enhancement */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin: 0.3em 0;
+      flex-wrap: wrap;
+    }
+    
+    .social-link {
+      padding: 0.5em 1em;
+      background: rgba(58, 58, 58, 0.15);
+      border-radius: 25px;
+      border: 1px solid rgba(187, 134, 252, 0.1);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    
+    .social-link:hover {
+      background: rgba(187, 134, 252, 0.05);
+      border-color: rgba(187, 134, 252, 0.15);
+      transform: translateY(-0.5px);
+      box-shadow: 0 0.5px 2px rgba(187, 134, 252, 0.05);
+    }
 
     /* Bio spacing */
     .bio {
@@ -70,11 +199,15 @@
     
     .bio-highlight {
       font-weight: 500;
-      color: #03DAC6;
+      background: linear-gradient(135deg, #4DCFC3, #C7A6E8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
     }
     
     .bio-section {
-      margin-bottom: 1.2em;
+      margin-bottom: 0.5em;
     }
     
     .bio-tools {
@@ -90,16 +223,126 @@
 
     /* Footer */
     .footer {
-      text-align: right;
-      font-size: large;
-      margin-top: 2em;
+      text-align: center;
+      font-size: medium;
+      margin-top: 4em;
+      padding: 2em 0;
+      position: relative;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.3), transparent);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(187, 134, 252, 0.9), rgba(3, 218, 198, 0.9));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      color: #1A1A1A;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      font-weight: bold;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:active {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    /* Section divider */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.3), rgba(3, 218, 198, 0.3), transparent);
+      margin: 1.8em 0;
     }
 
     /* Paper section */
     .paper {
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 2em;
+      margin-bottom: 2.5em;
+      padding: 2em;
+      background: linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(50, 50, 50, 0.2) 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    
+    .paper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.2), rgba(3, 218, 198, 0.2), transparent);
+      transform: translateX(-100%);
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .paper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(45deg, transparent 30%, rgba(187, 134, 252, 0.02), rgba(3, 218, 198, 0.02), transparent 70%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .paper:hover {
+      background: linear-gradient(135deg, rgba(41, 41, 41, 0.32) 0%, rgba(51, 51, 51, 0.22) 100%);
+      box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.15),
+        0 1px 3px rgba(187, 134, 252, 0.05);
+    }
+    
+    .paper:hover::before {
+      transform: translateX(0);
+    }
+    
+    .paper:hover::after {
+      opacity: 0.5;
     }
 
     .paper-image {
@@ -110,15 +353,92 @@
 
     .paper-image img {
       width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .paper:hover .paper-image img {
+      transform: scale(1.02);
     }
 
     .paper-details {
       flex: 2;
     }
+    
+    .paper-details em {
+      color: #03DAC6;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      display: inline-block;
+      padding: 0.2em 0.8em;
+      background: rgba(3, 218, 198, 0.1);
+      border-radius: 20px;
+      margin-bottom: 0.5em;
+    }
+    
+    .paper-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin: 0.4em 0 0.4em 0;
+    }
+    
+    .paper-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.3em 0.8em;
+      background: rgba(187, 134, 252, 0.1);
+      border: 1px solid rgba(187, 134, 252, 0.3);
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+      cursor: pointer;
+    }
+    
+    .paper-link:hover {
+      background: rgba(187, 134, 252, 0.2);
+      border-color: #BB86FC;
+      transform: translateY(-1px);
+    }
+    
+    .paper-description {
+      color: rgba(240, 240, 240, 0.8);
+      line-height: 1.6;
+      margin-top: 0.4em;
+      font-size: 16px;
+    }
 
     /* Talks section */
-    .talks-list p {
-      margin-bottom: 0.5em;
+    .talks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    
+    .talk-item {
+      background: rgba(58, 58, 58, 0.2);
+      padding: 1.2em;
+      border-radius: 10px;
+      border-left: 3px solid #BB86FC;
+      transition: all 0.3s ease;
+      margin: 0;
+    }
+    
+    .talk-item:hover {
+      background: rgba(58, 58, 58, 0.22);
+      border-left-color: rgba(187, 134, 252, 0.8);
+      transform: translateX(1px);
+    }
+    
+    .talk-venue {
+      color: #03DAC6;
+      font-size: 0.9em;
+      font-weight: 500;
     }
 
     /* Header */
@@ -126,44 +446,107 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1em;
+      margin-bottom: 0.65em;
+      padding: 2em 0 1em 0;
     }
 
     .headshot {
-      width: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      margin-right: 1em;
+      margin-right: 2em;
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .header-text {
       text-align: left;
     }
+    
+    .contact-info a {
+      position: relative;
+      display: inline-block;
+      color: #BB86FC;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    
+    .contact-info a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #03DAC6;
+      transition: width 0.3s ease;
+    }
+    
+    .contact-info a:hover::after {
+      width: 100%;
+    }
 
     /* Copy button */
     .copy-btn {
-      background-color: rgba(58, 58, 58, 0.5);
+      background: rgba(187, 134, 252, 0.1);
       color: #BB86FC;
-      border: 1px solid #BB86FC;
-      border-radius: 4px;
-      padding: 2px 6px;
-      margin-left: 2px;
+      border: 1px solid rgba(187, 134, 252, 0.3);
+      border-radius: 20px;
+      padding: 0.3em 0.8em;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 14px;
+      font-weight: 500;
       transition: all 0.3s ease;
-      vertical-align: middle;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
       position: relative;
-      top: -2px;
+      z-index: 10;
     }
 
     .copy-btn:hover {
-      background-color: rgba(187, 134, 252, 0.7);
-      color: #1E1E1E;
+      background: rgba(187, 134, 252, 0.2);
+      border-color: #BB86FC;
+      transform: translateY(-1px);
     }
 
     .copy-btn.copied {
-      background-color: rgba(3, 218, 198, 0.7);
-      color: #1E1E1E;
+      background: rgba(3, 218, 198, 0.2);
+      color: #03DAC6;
       border-color: #03DAC6;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .fade-in-delay-1 {
+      animation-delay: 0.1s;
+    }
+    
+    .fade-in-delay-2 {
+      animation-delay: 0.2s;
+    }
+    
+    .fade-in-delay-3 {
+      animation-delay: 0.3s;
+    }
+    
+    .fade-in-delay-4 {
+      animation-delay: 0.4s;
     }
 
     /* Mobile responsive styles */
@@ -280,6 +663,7 @@
       <img src="images/Nolan2 copy.jpg" alt="Nolan Koblischke" class="headshot">
       <div class="header-text">
         <p class="main-name">Nolan Koblischke</p>
+        <p class="hero-tagline">AI-powered astrophysics research</p>
         <p class="contact-info">
           <a href="mailto:nolan.koblischke@mail.utoronto.ca">nolan.koblischke@astro.utoronto.ca</a>
         </p>
@@ -287,36 +671,29 @@
     </div>
 
     <!-- Social Links -->
-    <p class="center-text">
-      <a href="https://blog.nolank.ca/blog/">Blog</a> &nbsp;/&nbsp;
-      <a href="https://www.linkedin.com/in/nolankob/">LinkedIn</a> &nbsp;/&nbsp;
-      <a href="https://twitter.com/astro_nolan">X</a> 
-      &nbsp;/&nbsp;
-      <a href="https://github.com/NolanKoblischke/">Github</a>
-
-    </p>
+    <div class="social-links">
+      <a href="https://blog.nolank.ca/blog/" class="social-link">📝 Blog</a>
+      <a href="https://www.linkedin.com/in/nolankob/" class="social-link">💼 LinkedIn</a>
+      <a href="https://twitter.com/astro_nolan" class="social-link">𝕏</a>
+      <a href="https://github.com/NolanKoblischke/" class="social-link">💻 GitHub</a>
+    </div>
 
     <!-- Bio -->
     <div class="bio">
       <div class="bio-section">
-        <p><span class="bio-highlight">📍 Currently:</span> Research Intern at <a href="https://polymathic-ai.org/">Polymathic AI</a> - Summer 2025</p>
-        <p><span class="bio-highlight">🎓 PhD:</span> 2nd year Astrophysics @ University of Toronto | Advisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a></p>
+        <p><span class="bio-highlight">Now:</span> Research Intern at <a href="https://polymathic-ai.org/">Polymathic AI</a> - Summer 2025</p>
+        <p><span class="bio-highlight">PhD:</span> Astrophysics @ Toronto - Advisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a> - Expected 2028</p>
       </div>
       
       <div class="bio-section">
-        <p><span class="bio-highlight">🚀 Focus:</span> Developing foundation models for Astrophysics</p>
-        <p><span class="bio-highlight">🔬 Mission:</span> Prepping for AGI4Science</p>
-      </div>
-      
-      <p><span class="bio-highlight">🎯 Background:</span> UBC Physics B.Sc., Computer Science Minor</p>
-      
-      <div class="bio-tools">
-        <p><span class="bio-highlight">🛠️ Built:</span> <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a>, <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a>, and <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
-        <p><span class="bio-highlight">📝 Latest:</span> <a href="https://blog.nolank.ca/astrocoder/">How we made AstroCoder</a></p>
+        <p><span class="bio-highlight">Mission:</span> Using this new wave of AI to understand the universe.</p>
+        <p><span class="bio-highlight">Tools:</span> <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a> - <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a> - <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
+        <p><span class="bio-highlight">Latest:</span> <a href="https://blog.nolank.ca/astrocoder/">Building AstroCoder</a></p>
       </div>
     </div>
 
-
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
 
     <!-- Papers -->
     <div class="paper">
@@ -325,22 +702,21 @@
       </div>
       <div class="paper-details">
         <papertitle>Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents</papertitle>
-        <br>
-        <strong>Nolan Koblischke</strong>, Hyunseok Jang, Kristen Menou, Mohamad Ali-Dib
-        <br>
+        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Hyunseok Jang, Kristen Menou, Mohamad Ali-Dib</p>
         <em>ICML 2025</em>
-        <br>
-        <a href="https://gravitybench.github.io/" target="_blank">Blog Post</a> | 
-        <a href="https://arxiv.org/abs/2501.18411" target="_blank">Paper</a>
-        <button class="copy-btn" data-bibtex="@misc{koblischke2025gravitybench,
+        <div class="paper-meta">
+          <a href="https://gravitybench.github.io/" target="_blank" class="paper-link">📝 Blog Post</a>
+          <a href="https://arxiv.org/abs/2501.18411" target="_blank" class="paper-link">📄 Paper</a>
+          <button type="button" class="copy-btn" data-bibtex="@misc{koblischke2025gravitybench,
       title={Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents},
       author={Koblischke, Nolan and Jang, Hyunseok and Menou, Kristen and Ali-Dib, Mohamad},
       year={2025},
       archivePrefix={arXiv},
       eprint={2501.18411},
       url={https://arxiv.org/abs/2501.18411}
-}">BibTeX</button>
-        <p>
+}">📋 BibTeX</button>
+        </div>
+        <p class="paper-description">
           A benchmark that challenges AI agents on gravitational physics discovery tasks, evaluating scientific reasoning and observational planning capabilities within controlled, physics-based environments.
         </p>
       </div>
@@ -352,15 +728,14 @@
       </div>
       <div class="paper-details">
         <papertitle>AstroCoder: AI-Powered Discovery and Usage of Astronomy Software</papertitle>
-        <br>
-        <strong>Nolan Koblischke</strong>, Mugdha Polimera, Maja Jablonska, Sergi Blanco-Cuaresma, Hilke Reckman, Ioana Ciuca & <a href="https://universetbd.org/">UniverseTBD</a>
-        <br>
+        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Mugdha Polimera, Maja Jablonska, Sergi Blanco-Cuaresma, Hilke Reckman, Ioana Ciuca & <a href="https://universetbd.org/">UniverseTBD</a></p>
         <em>Application - April 10, 2025</em>
-        <br>
-        <a href="https://nolank.ca/astrocoder/" target="_blank">Try AstroCoder</a> | 
-        <a href="https://blog.nolank.ca/astrocoder/" target="_blank">Technical Details</a>
-        <p>
-          An AI-powered tool that helps astronomers discover and work with 2,270 repositories from the Astronomy Source Code Library (ASCL), providing AI-generated summaries, installation guides, and examples.
+        <div class="paper-meta">
+          <a href="https://nolank.ca/astrocoder/" target="_blank" class="paper-link">🚀 Try AstroCoder</a>
+          <a href="https://blog.nolank.ca/astrocoder/" target="_blank" class="paper-link">📚 Technical Details</a>
+        </div>
+        <p class="paper-description">
+          Transforming how astronomers discover code: AI-powered search across 2,270 astronomy tools. From finding the right package to generating working examples in seconds.
         </p>
       </div>
     </div>
@@ -372,13 +747,11 @@
       </div>
       <div class="paper-details">
         <papertitle>SpectraFM: Tuning into Stellar Foundation Models</papertitle>
-        <br>
-        <strong>Nolan Koblischke</strong>, Jo Bovy
-        <br>
+        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Jo Bovy</p>
         <em>NeurIPS 2024 Workshop: Foundation Models for Science</em>
-        <br>
-        <a href="https://arxiv.org/abs/2411.04750" target="_blank">arXiv:2411.04750</a>
-        <button class="copy-btn" data-bibtex="@misc{koblischke2024spectrafmtuningstellarfoundation,
+        <div class="paper-meta">
+          <a href="https://arxiv.org/abs/2411.04750" target="_blank" class="paper-link">📄 arXiv:2411.04750</a>
+          <button type="button" class="copy-btn" data-bibtex="@misc{koblischke2024spectrafmtuningstellarfoundation,
       title={SpectraFM: Tuning into Stellar Foundation Models}, 
       author={Nolan Koblischke and Jo Bovy},
       year={2024},
@@ -386,8 +759,9 @@
       archivePrefix={arXiv},
       primaryClass={astro-ph.IM},
       url={https://arxiv.org/abs/2411.04750}, 
-}">BibTeX</button>
-        <p>
+}">📋 BibTeX</button>
+        </div>
+        <p class="paper-description">
           A Transformer-based model capable of processing stellar spectra across any wavelength range.
         </p>
       </div>
@@ -399,13 +773,11 @@
       </div>
       <div class="paper-details">
         <papertitle>Calibrating and standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud using small-amplitude red giants</papertitle>
-        <br>
-        <strong>Nolan Koblischke</strong>, Richard I. Anderson
-        <br>
+        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Richard I. Anderson</p>
         <em>Astrophysical Journal</em>, 2024
-        <br>
-        <a href="https://arxiv.org/abs/2406.19375" target="_blank">arXiv:2406.19375</a>
-        <button class="copy-btn" data-bibtex="@article{Koblischke_2024,
+        <div class="paper-meta">
+          <a href="https://arxiv.org/abs/2406.19375" target="_blank" class="paper-link">📄 arXiv:2406.19375</a>
+          <button type="button" class="copy-btn" data-bibtex="@article{Koblischke_2024,
    title={Calibrating and Standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud Using Small-amplitude Red Giants},
    volume={974},
    ISSN={1538-4357},
@@ -416,8 +788,9 @@
    publisher={American Astronomical Society},
    author={Koblischke, Nolan W. and Anderson, Richard I.},
    year={2024},
-   month=oct, pages={181} }">BibTeX</button>
-        <p>
+   month=oct, pages={181} }">📋 BibTeX</button>
+        </div>
+        <p class="paper-description">
           Discovered that pulsation impacts the TRGB in the SMC as in the LMC, with older, longer period pulsators leading to a highly accurate TRGB tip measurement.
         </p>
       </div>
@@ -428,13 +801,11 @@
       </div>
       <div class="paper-details">
         <papertitle>Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle</papertitle>
-        <br>
-        Richard I. Anderson, <strong>Nolan Koblischke</strong>, Laurent Eyer
-        <br>
+        <p style="margin: 0 0 0.4em 0;">Richard I. Anderson, <strong>Nolan Koblischke</strong>, Laurent Eyer</p>
         <em>Astrophysical Journal Letters</em>, 2024
-        <br>
-        <a href="https://arxiv.org/abs/2303.04790" target="_blank">arXiv:2303.04790</a>
-        <button class="copy-btn" data-bibtex="@article{Anderson_2024,
+        <div class="paper-meta">
+          <a href="https://arxiv.org/abs/2303.04790" target="_blank" class="paper-link">📄 arXiv:2303.04790</a>
+          <button type="button" class="copy-btn" data-bibtex="@article{Anderson_2024,
 doi = {10.3847/2041-8213/ad284d},
 url = {https://dx.doi.org/10.3847/2041-8213/ad284d},
 year = {2024},
@@ -446,8 +817,9 @@ pages = {L43},
 author = {Anderson, Richard I. and Koblischke, Nolan W. and Eyer, Laurent},
 title = {Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle},
 journal = {The Astrophysical Journal Letters}
-}">BibTeX</button>
-        <p>
+}">📋 BibTeX</button>
+        </div>
+        <p class="paper-description">
           Discovered that red giant pulsation adds a new dimension of the TRGB method, leading to an enhanced method for measuring the Universe's expansion rate.
         </p>
         <p>
@@ -468,55 +840,116 @@ journal = {The Astrophysical Journal Letters}
       </div>
       <div class="paper-details">
         <papertitle>ChatGaia: Natural Language Interface to the Gaia Space Telescope</papertitle>
-        <br>
-        <strong>Nolan Koblischke</strong>
-        <br>
-        <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia" target="_blank">ChatGaia</a>
-        <p>
-          A ChatGPT-powered tool enabling natural language interaction with Gaia's database of 2 billion astronomical sources. Reached 68,000+ viewers and used thousands of times.
+        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong></p>
+        <em>OpenAI GPT Store</em>
+        <div class="paper-meta">
+          <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia" target="_blank" class="paper-link">🌌 Try ChatGaia</a>
+        </div>
+        <p class="paper-description">
+          "Hey Gaia, find me the nearest black hole." Making 2 billion stars queryable through conversation. Reached 68,000+ viewers and used thousands of times.
         </p>
       </div>
     </div>
 
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
     <!-- Talks -->
     <heading>Talks</heading>
     <div class="talks-list">
-      <p>• <a href="https://pirsa.org/25040062" target="_blank">UniverseTBD & AstroCoder (10:00-)</a> - Theory + AI Symposium, Perimeter Institute</p>
-      <p>• <a href="https://www.youtube.com/live/r-Or1kEM1wo" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a> - ESO Natural Language Processing in Astronomy</p>
-      <p>• <a href="https://www.cosmos.esa.int/web/natural-language-processing-for-space-science/videos-recordings" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a> - NLP for Space Science Workshop, ESA/ESAC, Madrid</p>
-      <p>• <a href="https://youtu.be/2BXLR-UYUns" target="_blank">SpectraFM: Tuning into Stellar Foundation Models</a> - AstroAI Workshop, Harvard-Smithsonian CfA</p>
-      <p>• <a href="https://youtu.be/KG75DUmQ3pQ" target="_blank">ChatGaia: Talk to the Gaia Archive in Natural Language</a> - Debating the Potential of Machine Learning in Astronomical Surveys, Flatiron</p>
+      <p class="talk-item"><a href="https://pirsa.org/25040062" target="_blank">UniverseTBD & AstroCoder (10:00-)</a><br><span class="talk-venue">Theory + AI Symposium, Perimeter Institute</span></p>
+      <p class="talk-item"><a href="https://www.youtube.com/live/r-Or1kEM1wo" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br><span class="talk-venue">ESO Natural Language Processing in Astronomy</span></p>
+      <p class="talk-item"><a href="https://www.cosmos.esa.int/web/natural-language-processing-for-space-science/videos-recordings" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br><span class="talk-venue">NLP for Space Science Workshop, ESA/ESAC, Madrid</span></p>
+      <p class="talk-item"><a href="https://youtu.be/2BXLR-UYUns" target="_blank">SpectraFM: Tuning into Stellar Foundation Models</a><br><span class="talk-venue">AstroAI Workshop, Harvard-Smithsonian CfA</span></p>
+      <p class="talk-item"><a href="https://youtu.be/KG75DUmQ3pQ" target="_blank">ChatGaia: Talk to the Gaia Archive in Natural Language</a><br><span class="talk-venue">Debating the Potential of Machine Learning in Astronomical Surveys, Flatiron</span></p>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-      <p><a href="https://github.com/jonbarron/jonbarron_website">Website Template</a></p>
+      <p>Template from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a></p>
     </div>
   </div>
+  
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
 
-  <!-- JavaScript for copy buttons -->
+  <!-- JavaScript for copy buttons and animations -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Copy buttons functionality
       const copyButtons = document.querySelectorAll('.copy-btn');
       
       copyButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const originalText = this.innerHTML;
           const bibtex = this.getAttribute('data-bibtex');
+          
           navigator.clipboard.writeText(bibtex).then(() => {
             // Visual feedback
-            this.textContent = 'Copied!';
+            this.innerHTML = '✅ Copied!';
             this.classList.add('copied');
             
             // Reset after 2 seconds
             setTimeout(() => {
-              this.textContent = 'BibTeX';
+              this.innerHTML = originalText;
               this.classList.remove('copied');
             }, 2000);
           }).catch(err => {
             console.error('Failed to copy: ', err);
+            // Fallback for browsers that don't support clipboard API
+            const textArea = document.createElement('textarea');
+            textArea.value = bibtex;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            this.innerHTML = '✅ Copied!';
+            this.classList.add('copied');
+            setTimeout(() => {
+              this.innerHTML = originalText;
+              this.classList.remove('copied');
+            }, 2000);
           });
         });
       });
+      
+      // Back to top button
+      const backToTopButton = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Add fade-in animations to elements
+      const elements = document.querySelectorAll('.header, .social-links, .bio, .paper, heading, .talks-list');
+      elements.forEach((el, index) => {
+        el.classList.add('fade-in');
+        if (index < 4) {
+          el.classList.add(`fade-in-delay-${index + 1}`);
+        } else {
+          el.style.animationDelay = `${0.1 * (index + 1)}s`;
+        }
+      });
+      
+      // Removed parallax effect to fix button clickability
     });
   </script>
 </body>
