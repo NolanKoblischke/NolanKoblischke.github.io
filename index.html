@@ -145,6 +145,111 @@
       color: #1E1E1E;
       border-color: #03DAC6;
     }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .main-name {
+        font-size: 28px;
+      }
+
+      p, a, papertitle, heading {
+        font-size: 16px;
+      }
+
+      /* Header adjustments */
+      .header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2em;
+      }
+
+      .headshot {
+        width: 120px;
+        margin-right: 0;
+        margin-bottom: 1em;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      /* Paper layout for mobile */
+      .paper {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3em;
+      }
+
+      .paper-image {
+        margin-right: 0;
+        margin-bottom: 1em;
+        max-width: 200px;
+      }
+
+      .paper-details {
+        text-align: center;
+      }
+
+      .paper-details p {
+        text-align: left;
+        margin-top: 0.5em;
+      }
+
+      /* Social links */
+      .center-text {
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      /* Bio section */
+      .bio {
+        padding: 0 1em;
+      }
+
+      /* Talks list */
+      .talks-list {
+        padding: 0 1em;
+      }
+
+      .talks-list p {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        font-size: medium;
+      }
+
+      /* Copy button adjustments */
+      .copy-btn {
+        display: inline-block;
+        margin-top: 0.5em;
+        margin-left: 0;
+        padding: 4px 10px;
+      }
+
+      /* Main container padding */
+      body > div {
+        padding: 0.5em !important;
+      }
+    }
+
+    /* Tablet styles */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .paper-image {
+        max-width: 200px;
+      }
+
+      .headshot {
+        width: 130px;
+      }
+    }
   </style>
 </head>
 
