@@ -77,7 +77,7 @@
       display: inline-block;
       font-size: 20px;
       line-height: 1.4;
-      color: #ffffff;
+      color: #e0e0e0;
       margin-bottom: 0.5em;
     }
 
@@ -209,10 +209,22 @@
 
     .paper-image img {
       width: 100%;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      opacity: 0.95;
+      filter: brightness(0.95);
     }
 
     .paper-details {
       flex: 2;
+    }
+    
+    .paper-details strong {
+      color: #e0e0e0;
+    }
+    
+    .paper-details p:first-of-type {
+      color: #d0d0d0;
     }
     
     .paper-details em {
