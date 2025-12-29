@@ -206,8 +206,8 @@
     }
 
     .paper-image {
-      flex: 1;
-      max-width: 250px;
+      flex: 0 0 400px;
+      max-width: 400px;
       margin-right: 20px;
     }
 
@@ -408,7 +408,7 @@
       .paper-image {
         margin-right: 0;
         margin-bottom: 1em;
-        max-width: 200px;
+        max-width: 240px;
       }
 
       .paper-details {
@@ -514,12 +514,13 @@
     <!-- Bio -->
     <div class="bio">
       <div class="bio-section">
-        <p><span class="bio-highlight">Now (as of Sept. 2025):</span> Working on vision-language models for discovery in astronomy. Recently spent a summer at <a href="https://polymathic-ai.org/">Polymathic AI</a>.</p>
+        <p><span class="bio-highlight">Now (as of Dec. 2025):</span> Working on vision-language models for discovery in astronomy. Recently spent a summer at <a href="https://polymathic-ai.org/">Polymathic AI</a>.</p>
         <p><span class="bio-highlight">PhD:</span> Astrophysics @ Toronto - Advisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a> - Expected 2028</p>
+        <p><span class="bio-highlight">Latest News:</span> Interview with <a href="https://youtu.be/LF22szp7ouo">Fraser Cain / Universe Today</a></p>
       </div>
       
       <div class="bio-section">
-        <p><span class="bio-highlight">Tools:</span> <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a> - <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a> - <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
+        <p><span class="bio-highlight">Tools:</span> <a href="https://astronolan-aion-search.hf.space/">AION-Search</a> - <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a> - <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a> - <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
       </div>
     </div>
 
@@ -527,6 +528,36 @@
     <div class="section-divider"></div>
 
     <!-- Papers -->
+    <div class="paper">
+      <div class="paper-image">
+        <img src="images/aionsearch.png" alt="AION-Search">
+      </div>
+      <div class="paper-details">
+        <papertitle>AION-Search: Semantic Search for 100M+ Galaxy Images Using AI-Generated Captions</papertitle>
+        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Liam Parker, Francois Lanusse, Irina Espejo Morales, Jo Bovy, Shirley Ho</p>
+        <em>NeurIPS 2025 AI4Science Workshop</em>
+        <div class="paper-meta">
+          <a href="https://aion-search.github.io/" target="_blank" class="paper-link">📝 Blog Post</a>
+          <a href="https://astronolan-aion-search.hf.space/" target="_blank" class="paper-link">🔍 Search App</a>
+          <a href="https://arxiv.org/abs/2512.11982" target="_blank" class="paper-link">📄 Paper</a>
+          <a href="https://github.com/NolanKoblischke/AION-Search" target="_blank" class="paper-link">💻 Code</a>
+          <a href="https://youtu.be/LF22szp7ouo" target="_blank" class="paper-link">🎬 Interview</a>
+          <button type="button" class="copy-btn" data-bibtex="@misc{koblischke2025semantic,
+      title={Semantic search for 100M+ galaxy images using AI-generated captions},
+      author={Nolan Koblischke and Liam Parker and Francois Lanusse and Irina Espejo Morales and Jo Bovy and Shirley Ho},
+      year={2025},
+      eprint={2512.11982},
+      archivePrefix={arXiv},
+      primaryClass={astro-ph.IM},
+      url={https://arxiv.org/abs/2512.11982}
+}">📋 BibTeX</button>
+        </div>
+        <p class="paper-description">
+          A text-based search engine for galaxy images trained on AI-generated captions. Enables flexible semantic search for rare phenomena without manual labeling.
+        </p>
+      </div>
+    </div>
+
     <div class="paper">
       <div class="paper-image">
         <img src="images/gravitybench.png" alt="GravityBench">
@@ -687,6 +718,7 @@ journal = {The Astrophysical Journal Letters}
     <!-- Talks -->
     <heading>Talks</heading>
     <div class="talks-list">
+      <p class="talk-item"><a href="https://youtu.be/LF22szp7ouo" target="_blank">Teaching ChatGPT to Do Real Science</a><br><span class="talk-venue">Fraser Cain / Universe Today Podcast</span></p>
       <p class="talk-item"><a href="https://pirsa.org/25040062" target="_blank">UniverseTBD & AstroCoder (10:00-)</a><br><span class="talk-venue">Theory + AI Symposium, Perimeter Institute</span></p>
       <p class="talk-item"><a href="https://www.youtube.com/live/r-Or1kEM1wo" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br><span class="talk-venue">ESO Natural Language Processing in Astronomy</span></p>
       <p class="talk-item"><a href="https://www.cosmos.esa.int/web/natural-language-processing-for-space-science/videos-recordings" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br><span class="talk-venue">NLP for Space Science Workshop, ESA/ESAC, Madrid</span></p>
