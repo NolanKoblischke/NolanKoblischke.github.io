@@ -5,13 +5,19 @@
   <title>Nolan Koblischke</title>
   <meta name="author" content="Nolan Koblischke">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nolan Koblischke - PhD student in Astrophysics at University of Toronto. Building AI tools for astronomical discovery including AION-Search, ChatGaia, and SpectraFM.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/Nolan2 copy.jpg">
-  <link rel="apple-touch-icon" href="images/Nolan2 copy.jpg">
+  <link rel="icon" type="image/webp" href="images/headshot.webp">
+  <link rel="apple-touch-icon" href="images/headshot.webp">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Preconnect to Google Fonts for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts - loaded with display=swap to prevent render blocking -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
   
   <!-- Stylesheet -->
   <style>
@@ -95,14 +101,16 @@
       color: #ffffff;
     }
 
-    /* Links */
+    /* Links - improved contrast and accessibility */
     a {
-      color: #60a5fa;
-      text-decoration: none;
+      color: #7cb3fc;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
     }
 
     a:hover {
-      color: #93bbfc;
+      color: #a8cbfd;
     }
 
     /* Layout utilities */
@@ -118,17 +126,19 @@
       margin: 1.5em 0;
       flex-wrap: wrap;
     }
-    
+
     .social-link {
       font-size: 0.9em;
       color: #94a3b8;
       display: inline-flex;
       align-items: center;
       gap: 0.4em;
+      text-decoration: none;
     }
-    
+
     .social-link:hover {
       color: #cbd5e1;
+      text-decoration: none;
     }
 
     /* Bio spacing */
@@ -144,7 +154,7 @@
     
     .bio-highlight {
       font-weight: 600;
-      color: #60a5fa;
+      color: #7cb3fc;
     }
     
     .bio-section {
@@ -213,6 +223,7 @@
 
     .paper-image img {
       width: 100%;
+      height: auto;
       border-radius: 4px;
       border: 1px solid rgba(255, 255, 255, 0.05);
       opacity: 0.95;
@@ -256,12 +267,13 @@
       position: relative;
       z-index: 10;
       cursor: pointer;
-      color: #60a5fa;
+      color: #7cb3fc;
       margin-right: 1.2em;
     }
-    
+
     .paper-link:hover {
-      color: #93bbfc;
+      color: #a8cbfd;
+      text-decoration: none;
     }
     
     .paper-description {
@@ -309,23 +321,27 @@
 
     .header-text {
       text-align: left;
+      /* Prevent CLS from font loading */
+      min-height: 100px;
     }
     
     .contact-info a {
       position: relative;
       display: inline-block;
-      color: #60a5fa;
+      color: #7cb3fc;
       font-size: 16px;
+      text-decoration: none;
     }
-    
+
     .contact-info a:hover {
-      color: #93bbfc;
+      color: #a8cbfd;
+      text-decoration: none;
     }
 
     /* Copy button */
     .copy-btn {
       background: transparent;
-      color: #60a5fa;
+      color: #7cb3fc;
       border: none;
       padding: 0;
       cursor: pointer;
@@ -342,7 +358,7 @@
     }
 
     .copy-btn:hover {
-      color: #93bbfc;
+      color: #a8cbfd;
     }
 
     .copy-btn.copied {
@@ -497,7 +513,7 @@
   <div style="max-width: 880px; margin: 0 auto; padding: 1em;">
     <!-- Header -->
     <div class="header">
-      <img src="images/Nolan2 copy.jpg" alt="Nolan Koblischke" class="headshot">
+      <img src="images/headshot.webp" alt="Nolan Koblischke" class="headshot" width="160" height="160">
       <div class="header-text">
         <p class="main-name">Nolan Koblischke</p>
         <p class="hero-tagline">AI + astrophysics</p>
@@ -535,7 +551,7 @@
     <!-- Papers -->
     <div class="paper">
       <div class="paper-image">
-        <img src="images/aionsearch.png" alt="AION-Search">
+        <img src="images/aionsearch.webp" alt="AION-Search" width="800" height="444" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>AION-Search: Semantic Search for 100M+ Galaxy Images Using AI-Generated Captions</papertitle>
@@ -565,7 +581,7 @@
 
     <div class="paper">
       <div class="paper-image">
-        <img src="images/gravitybench.png" alt="GravityBench">
+        <img src="images/gravitybench.webp" alt="GravityBench" width="800" height="397" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents</papertitle>
@@ -591,7 +607,7 @@
 
     <div class="paper">
       <div class="paper-image">
-        <img src="images/astrocoder.png" alt="AstroCoder">
+        <img src="images/astrocoder.webp" alt="AstroCoder" width="800" height="752" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>AstroCoder: AI-Powered Discovery and Usage of Astronomy Software</papertitle>
@@ -610,7 +626,7 @@
 
     <div class="paper">
       <div class="paper-image">
-        <img src="images/spectrafm.jpg" alt="SpectraFM">
+        <img src="images/spectrafm.webp" alt="SpectraFM" width="800" height="840" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>SpectraFM: Tuning into Stellar Foundation Models</papertitle>
@@ -636,7 +652,7 @@
 
     <div class="paper">
       <div class="paper-image">
-        <img src="images/smc.png" alt="SMC">
+        <img src="images/smc.webp" alt="SMC" width="800" height="764" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>Calibrating and standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud using small-amplitude red giants</papertitle>
@@ -664,7 +680,7 @@
     </div>
     <div class="paper">
       <div class="paper-image">
-        <img src="images/lmc.png" alt="LMC">
+        <img src="images/lmc.webp" alt="LMC" width="800" height="789" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle</papertitle>
@@ -703,7 +719,7 @@ journal = {The Astrophysical Journal Letters}
 
     <div class="paper">
       <div class="paper-image">
-        <img src="images/chatgaia.png" alt="ChatGaia">
+        <img src="images/chatgaia.webp" alt="ChatGaia" width="800" height="492" loading="lazy">
       </div>
       <div class="paper-details">
         <papertitle>ChatGaia: Natural Language Interface to the Gaia Space Telescope</papertitle>
