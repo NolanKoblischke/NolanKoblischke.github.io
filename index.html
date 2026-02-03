@@ -530,6 +530,7 @@
       <a href="https://twitter.com/astro_nolan" class="social-link">𝕏</a>
       <a href="https://github.com/NolanKoblischke/" class="social-link">💻 GitHub</a>
       <a href="assets/files/cv.pdf" class="social-link">📄 CV</a>
+      <a href="https://scholar.google.com/citations?user=239WPlwAAAAJ" class="social-link">🎓 Scholar</a>
     </div>
 
     <!-- Bio -->
@@ -758,6 +759,19 @@ journal = {The Astrophysical Journal Letters}
   <!-- JavaScript for copy buttons and animations -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Open links in new tabs (skip mailto/tel/hash to avoid blank tabs)
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+        link.setAttribute('target', '_blank');
+
+        const rel = new Set((link.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+        rel.add('noopener');
+        rel.add('noreferrer');
+        link.setAttribute('rel', Array.from(rel).join(' '));
+      });
+
       // Copy buttons functionality
       const copyButtons = document.querySelectorAll('.copy-btn');
       
