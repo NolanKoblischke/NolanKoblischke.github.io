@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas of Peculiar Galaxies &mdash; found with AION-Search</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f0e8;
+    color: #2c2416;
+    font-family: "EB Garamond", "Georgia", serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 2px solid #2c2416;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  header h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #1a1008;
+  }
+  header .subtitle {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #5a4a32;
+    margin-bottom: 24px;
+  }
+  header .subtitle a { color: #5a4a32; }
+  header .byline {
+    font-size: 0.95rem;
+    color: #7a6a52;
+  }
+
+  .intro {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: justify;
+    font-size: 1.05rem;
+  }
+  .intro p { margin-bottom: 16px; }
+  .intro a { color: #2c2416; }
+
+  .plates {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  .plate {
+    background: #ece6d8;
+    border: 1px solid #c8b99a;
+    padding: 20px;
+    text-align: center;
+    break-inside: avoid;
+  }
+
+  .plate-number {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5a4a32;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #c8b99a;
+    padding-bottom: 8px;
+  }
+
+  .plate .img-frame {
+    display: inline-block;
+    border: 3px solid #2c2416;
+    padding: 3px;
+    background: #000;
+    margin-bottom: 14px;
+  }
+
+  .plate img {
+    display: block;
+    width: 256px;
+    height: 256px;
+    image-rendering: auto;
+  }
+
+  .plate .coords {
+    font-size: 0.85rem;
+    color: #7a6a52;
+    font-family: "Courier New", monospace;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .plate .simbad-id {
+    font-size: 0.78rem;
+    color: #9a8a6a;
+    font-family: "Courier New", monospace;
+    margin-bottom: 10px;
+  }
+
+  .plate .description {
+    font-size: 0.95rem;
+    text-align: left;
+    color: #3a2e1e;
+    line-height: 1.5;
+  }
+
+  .plate .survey-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-family: "Courier New", monospace;
+    color: #9a8a6a;
+    margin-top: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .plate .viewer-link {
+    display: inline-block;
+    font-size: 0.82rem;
+    margin-top: 8px;
+    color: #5a4a32;
+    text-decoration: none;
+    border-bottom: 1px dotted #9a8a6a;
+  }
+  .plate .viewer-link:hover {
+    color: #2c2416;
+    border-bottom-style: solid;
+  }
+
+  footer {
+    max-width: 900px;
+    margin: 50px auto 0;
+    border-top: 2px solid #2c2416;
+    padding: 30px 20px 50px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7a6a52;
+  }
+  footer p { margin-bottom: 8px; }
+  footer a { color: #5a4a32; }
+
+  @media (max-width: 700px) {
+    header h1 { font-size: 1.8rem; }
+    .plates { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Atlas of Peculiar Galaxies</h1>
+  <div class="subtitle">found with <a href="https://aion-search.github.io/">AION-Search</a></div>
+  <div class="byline">Nolan Koblischke &middot; 2026</div>
+</header>
+
+<div class="intro">
+  <p>
+    In the tradition of Halton Arp's landmark 1966 <em>Atlas of Peculiar Galaxies</em>, this page presents
+    a collection of galaxies with unusual morphologies identified using <strong><a href="https://aion-search.github.io/">AION-Search</a></strong>, a semantic search engine for
+    galaxy images trained on AI-generated captions.
+    The comments accompanying each image were written by the author and are not AI-generated.
+  </p>
+</div>
+
+<div class="plates">
+
+  <div class="plate">
+    <div class="plate-number">Image 1</div>
+    <div class="img-frame"><img src="assets/image_01.jpg" alt="Image 1"></div>
+    <div class="coords">RA 239.3291 &nbsp; Dec +27.0713</div>
+    <div class="simbad-id">2MASX J15571939+2704167</div>
+    <div class="description">
+      Two galaxies sitting in a shared blue ring. The DR9 photo-z estimates differ (z=0.13 vs z=0.06), which suggests the pair may be a projected coincidence rather than physically associated.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=239.3291&dec=27.0713&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 2</div>
+    <div class="img-frame"><img src="assets/image_02.jpg" alt="Image 2"></div>
+    <div class="coords">RA 173.0954 &nbsp; Dec +28.0501</div>
+    <div class="simbad-id">Z 156-98 (EmG)</div>
+    <div class="description">
+      A galaxy with a shield-like tidal feature, likely a shell. A neighbour is nearby with similar photo-z.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=173.0954&dec=28.0501&zoom=14&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 3</div>
+    <div class="img-frame"><img src="assets/image_03.jpg" alt="Image 3"></div>
+    <div class="coords">RA 16.3170 &nbsp; Dec +1.4392</div>
+    <div class="simbad-id">&mdash;</div>
+    <div class="description">
+      In HSC imaging, I originally thought this was a peculiar looking gravitational lens. However, the Legacy Survey imaging catalog classifies the central source as a star.
+    </div>
+    <div class="survey-tag">HSC DR3</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=16.3170&dec=1.4392&zoom=16&layer=hsc-dr3" target="_blank">View in Legacy Survey (HSC)</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 4</div>
+    <div class="img-frame"><img src="assets/image_04.jpg" alt="Image 4"></div>
+    <div class="coords">RA 61.4532 &nbsp; Dec &minus;6.3240</div>
+    <div class="simbad-id">SDSS J040548.78-061925.8 (Sy2)</div>
+    <div class="description">
+      A bright yellow core with faint blue spiral arms. SIMBAD lists this as a Seyfert 2 galaxy, indicating an active galactic nucleus.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=61.4532&dec=-6.3240&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 5</div>
+    <div class="img-frame"><img src="assets/image_05.jpg" alt="Image 5"></div>
+    <div class="coords">RA 330.8739 &nbsp; Dec &minus;66.8016</div>
+    <div class="simbad-id">LEDA 301821</div>
+    <div class="description">
+      A bright tidal feature (stream?) that appears to be a stream with a curiously flat region.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=330.8739&dec=-66.8016&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 6</div>
+    <div class="img-frame"><img src="assets/image_06.jpg" alt="Image 6"></div>
+    <div class="coords">RA 314.1508 &nbsp; Dec &minus;3.3706</div>
+    <div class="simbad-id">LEDA 65753 (Sy2)</div>
+    <div class="description">
+      Two galaxies that appear to be interacting. The lower one with extreme tidal features. SIMBAD also lists this as a Seyfert 2 galaxy (AGN).
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=314.1508&dec=-3.3706&zoom=14&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 7</div>
+    <div class="img-frame"><img src="assets/image_07.jpg" alt="Image 7"></div>
+    <div class="coords">RA 317.7135 &nbsp; Dec &minus;46.0893</div>
+    <div class="simbad-id">ESO 286-66</div>
+    <div class="description">
+      An edge-on disk galaxy with blue extensions above and below. I recommend zooming in.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=317.7135&dec=-46.0893&zoom=14&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 8</div>
+    <div class="img-frame"><img src="assets/image_08.jpg" alt="Image 8"></div>
+    <div class="coords">RA 147.7506 &nbsp; Dec &minus;16.7079</div>
+    <div class="simbad-id">&mdash;</div>
+    <div class="description">
+      Incredible tidal features.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=147.7506&dec=-16.7079&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 9</div>
+    <div class="img-frame"><img src="assets/image_09.jpg" alt="Image 9"></div>
+    <div class="coords">RA 17.0701 &nbsp; Dec &minus;8.3885</div>
+    <div class="simbad-id">LEDA 3309022 (EmG)</div>
+    <div class="description">
+      Polar ring candidate. SIMBAD lists this as an emission-line galaxy.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=17.0701&dec=-8.3885&zoom=14&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 10</div>
+    <div class="img-frame"><img src="assets/image_10.jpg" alt="Image 10"></div>
+    <div class="coords">RA 25.5983 &nbsp; Dec &minus;12.9621</div>
+    <div class="simbad-id">2MASX J01422358-1257432 (EmG)</div>
+    <div class="description">
+      A luminous elliptical galaxy with a peculiar linear feature extending below. The DR9 photo-z estimates differ (z=0.197 for the linear feature vs z=0.069 for the central galaxy), which suggests the feature may be a projected coincidence rather than physically associated.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=25.5983&dec=-12.9621&zoom=16&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 11</div>
+    <div class="img-frame"><img src="assets/image_11.jpg" alt="Image 11"></div>
+    <div class="coords">RA 141.3513 &nbsp; Dec +4.5079</div>
+    <div class="simbad-id">MLCG 0837 (compact group)</div>
+    <div class="description">
+      A close interacting pair with a long tidal feature.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=141.3513&dec=4.5079&zoom=14&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 12</div>
+    <div class="img-frame"><img src="assets/image_12.jpg" alt="Image 12"></div>
+    <div class="coords">RA 51.7006 &nbsp; Dec &minus;2.7096</div>
+    <div class="simbad-id">LEDA 176189 / 2MFGC 2839</div>
+    <div class="description">
+      A merging system with interesting tidal features.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=51.7006&dec=-2.7096&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+  <div class="plate">
+    <div class="plate-number">Image 13</div>
+    <div class="img-frame"><img src="assets/image_13.jpg" alt="Image 13"></div>
+    <div class="coords">RA 348.7720 &nbsp; Dec &minus;71.2724</div>
+    <div class="simbad-id">LEDA 3978284 (EmG)</div>
+    <div class="description">
+      A pair of galaxies with a very faint ring.
+    </div>
+    <div class="survey-tag">DESI Legacy DR10</div>
+    <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=348.7720&dec=-71.2724&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    Images: DESI Legacy Imaging Surveys DR10 &amp; Hyper Suprime-Cam Subaru Strategic Program DR3
+  </p>
+  <p>
+    Galaxies identified with <a href="https://aion-search.github.io/">AION-Search</a>,
+    a semantic search engine for galaxy images.
+  </p>
+  <p>
+    Inspired by Arp, H. 1966, <em>Atlas of Peculiar Galaxies</em>, ApJS, 14, 1
+  </p>
+</footer>
+
+</body>
+</html>
