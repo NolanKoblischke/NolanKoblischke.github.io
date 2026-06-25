@@ -796,7 +796,7 @@ function footerHTML(stats) {
       <div class="col">
         <h4>Imagery</h4>
         <p>
-          Imagery from https://alasky.cds.unistra.fr/, mainly DESI Legacy Imaging Surveys DR10.
+          Imagery from alasky.cds.unistra.fr, mainly DESI Legacy Imaging Surveys DR10.
         </p>
       </div>
       <div class="col">
