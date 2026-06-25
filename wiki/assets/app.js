@@ -583,12 +583,11 @@ function galleryIntroHTML(stats) {
   return `
     <div class="console">
       <div class="console-head">
-        <h1>Every galaxy ever mentioned.</h1>
+        <h1>Every galaxy ever discussed.</h1>
         <p class="console-lede">
-          Found an object in your data? Look it up by name or drop its coordinates
-          to see whether, and exactly how, the research literature has written about it.
-          <strong>${fmtCount(stats.entities)}</strong> galaxies, every paper-facing name and
-          attesting passage preserved.
+          Look up a galaxy by name, descriptor, or drop its coordinates
+          to see whether astronomers have discussed it.
+          <strong>${fmtCount(stats.entities)}</strong> galaxies.
         </p>
       </div>
       <div class="searchbox">
@@ -793,23 +792,19 @@ function footerHTML(stats) {
           Galaxy mentions were resolved into <strong style="color: var(--ink)">${fmtCount(stats.entities)}</strong>
           one-arcsecond sky entities, preserving every paper-facing raw name alongside resolved aliases.
         </p>
-        <p>
-          The browser loads a compact index first, then opens the full dossier from a static JSON shard when a galaxy is selected.
-        </p>
       </div>
       <div class="col">
         <h4>Imagery</h4>
         <p>
-          Cutouts are bundled with the site as 256-pixel WebP assets, compressed at quality 70 from the selected survey image for each galaxy.
+          Imagery from https://alasky.cds.unistra.fr/, mainly DESI Legacy Imaging Surveys DR10.
         </p>
-        <p>Fields of view follow SIMBAD galaxy dimensions where available, with a compact default field otherwise.</p>
       </div>
       <div class="col">
         <h4>Dossier contents</h4>
         <p>
-          Each page contains canonical coordinates, aliases, angular size metadata, topic counts, and the source-by-source mention records.
+          Each page contains resolved coordinates, UAT keywords, and the paper mentions.
         </p>
-        <p><strong style="color: var(--ink)">${fmtCount(stats.sources)}</strong> per-paper attestations in total.</p>
+        <p><strong style="color: var(--ink)">${fmtCount(stats.sources)}</strong> paper mentions in total.</p>
       </div>
     </footer>
   `;
