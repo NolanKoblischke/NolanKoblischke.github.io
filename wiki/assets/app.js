@@ -29,8 +29,6 @@ const INITIAL_VISIBLE_LIMIT = 144;
 const VISIBLE_STEP = 144;
 const INITIAL_SOURCE_LIMIT = 48;
 const SOURCE_STEP = 96;
-const TRANSPARENT_PIXEL =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
 const CITATION_PATTERN = /\[((?:arXiv:(?:[a-z-]+\/\d{7}(?:v\d+)?|\d{4}\.\d{4,5}(?:v\d+)?)(?:,\s*)?)+)\]/gi;
 
 // Filters are every UAT (Unified Astronomy Thesaurus) concept carried by more
@@ -405,6 +403,22 @@ function resetVisibleLimit() {
   state.visibleLimit = INITIAL_VISIBLE_LIMIT;
 }
 
+function resetAtlasState() {
+  state.query = "";
+  state.filter = "all";
+  state.searchMode = "name";
+  state.coordRA = "";
+  state.coordDec = "";
+  state.coordQueryRA = null;
+  state.coordQueryDec = null;
+  state.coordResults = null;
+  state.coordError = null;
+  state.sortKey = "mentions";
+  state.sortDir = "desc";
+  state.focusField = "heroName";
+  resetVisibleLimit();
+}
+
 async function ensureSearchIndex() {
   if (state.searchIndex) return state.searchIndex;
   if (!state.searchPromise) {
@@ -543,7 +557,7 @@ function mastheadHTML() {
   return `
     <header class="masthead">
       <div class="masthead-inner">
-        <a class="wordmark" href="#" data-action="home">
+        <a class="wordmark" href="#" data-action="home-reset">
           <span class="glyph">Encyclopedia<em>Galactica</em></span>
         </a>
         <div class="masthead-right">
@@ -633,7 +647,7 @@ function coordResultsHTML() {
           <a class="coord-hit ${i === 0 ? "best" : ""}" data-open="${escapeHTML(e.slug)}">
             <div class="hit-thumb">${
               img
-                ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(e.name)}" loading="lazy" data-img-slug="${escapeHTML(e.slug)}">`
+                ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(e.name)}" loading="eager" fetchpriority="high" decoding="async" data-img-slug="${escapeHTML(e.slug)}">`
                 : `<svg viewBox="0 0 100 100" preserveAspectRatio="none">${placeholderField(e.slug)}</svg>`
             }</div>
             <div class="hit-body">
@@ -707,7 +721,7 @@ function tileHTML(entity, index = 0) {
   }
   return `
     <div class="tile" data-open="${escapeHTML(entity.slug)}">
-      <img src="${escapeHTML(index === 0 ? image : TRANSPARENT_PIXEL)}" ${index === 0 ? "" : `data-src="${escapeHTML(image)}"`} alt="${escapeHTML(entity.name)}" loading="${index === 0 ? "eager" : "lazy"}" fetchpriority="${index === 0 ? "high" : "auto"}" data-img-slug="${escapeHTML(entity.slug)}" data-img-index="${index}">
+      <img src="${escapeHTML(image)}" alt="${escapeHTML(entity.name)}" loading="eager" fetchpriority="high" decoding="async" data-img-slug="${escapeHTML(entity.slug)}" data-img-index="${index}">
       <div class="scrim"></div>
       <div class="corner">${escapeHTML(corner)}</div>
       ${papers > 5 ? `<div class="papers">${fmtCount(papers)}</div>` : ""}
@@ -1070,7 +1084,7 @@ function entryHTML(entity, loading = false) {
                   <div class="related-grid">
                     ${related.map((item) => `
                       <div class="r-tile" data-open="${escapeHTML(item.slug)}">
-                        <img src="${escapeHTML(imgUrl(item))}" alt="${escapeHTML(item.name)}" loading="lazy" data-img-slug="${escapeHTML(item.slug)}">
+                        <img src="${escapeHTML(imgUrl(item))}" alt="${escapeHTML(item.name)}" loading="eager" fetchpriority="high" decoding="async" data-img-slug="${escapeHTML(item.slug)}">
                         <div class="rname">${escapeHTML(item.name)}</div>
                       </div>
                     `).join("")}
@@ -1310,6 +1324,10 @@ function handleClick(event) {
     if (action === "home") {
       event.preventDefault();
       goHome();
+    } else if (action === "home-reset") {
+      event.preventDefault();
+      resetAtlasState();
+      goHome();
     } else if (action === "clear-search") {
       state.query = "";
       state.focusField = "heroName";
@@ -1356,17 +1374,10 @@ function handleClick(event) {
 function initImages(scope) {
   if (state.imageObserver) state.imageObserver.disconnect();
   const activate = (img) => {
-    const hydrate = () => {
-      if (img.dataset.src) {
-        img.src = img.dataset.src;
-        delete img.dataset.src;
-      }
-    };
-    const delay = img.dataset.src
-      ? Math.min(1200, Number(img.dataset.imgIndex || 0) * 35)
-      : 0;
-    if (delay > 0) window.setTimeout(hydrate, delay);
-    else hydrate();
+    if (img.dataset.src) {
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+    }
   };
   const images = [...scope.querySelectorAll("img[data-img-slug]")];
   if (!("IntersectionObserver" in window)) {
