@@ -1,27 +1,20 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="An atlas of resolved galaxy mentions from the astronomy literature."
-    >
-    <title>Encyclopedia Galactica · Atlas of Galaxy Mentions</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <script defer src="assets/app.js"></script>
+    <title>Redirecting to Encyclopedia Galactica</title>
+    <link rel="canonical" href="https://nolank.ca/galaxywiki/">
+    <meta http-equiv="refresh" content="0; url=/galaxywiki/">
+    <script>
+      // Preserve any path/query/hash after /wiki/ when redirecting.
+      (function () {
+        var rest = window.location.pathname.replace(/^\/wiki\/?/, "");
+        window.location.replace("/galaxywiki/" + rest + window.location.search + window.location.hash);
+      })();
+    </script>
   </head>
   <body>
-    <noscript>This page requires JavaScript to display.</noscript>
-    <div id="root">
-      <div class="loading-splash" aria-live="polite">
-        <div class="loading-stars"></div>
-        <div class="loading-brand">
-          <div class="glyph">Encyclopedia<em>Galactica</em></div>
-          <div class="sub">ATLAS OF GALAXY MENTIONS</div>
-          <div class="status">Unpacking atlas...</div>
-        </div>
-      </div>
-    </div>
+    <p>This page has moved to <a href="/galaxywiki/">nolank.ca/galaxywiki</a>.</p>
   </body>
 </html>

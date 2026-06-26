@@ -12,7 +12,7 @@ const state = {
   sortKey: "mentions",
   sortDir: "desc",
   theme: "light",
-  visibleLimit: 144,
+  visibleLimit: 720,
   lastVisibleCount: 0,
   searchIndex: null,
   searchPromise: null,
@@ -25,8 +25,8 @@ const state = {
   imageObserver: null,
 };
 
-const INITIAL_VISIBLE_LIMIT = 144;
-const VISIBLE_STEP = 144;
+const INITIAL_VISIBLE_LIMIT = 720;
+const VISIBLE_STEP = 720;
 const INITIAL_SOURCE_LIMIT = 48;
 const SOURCE_STEP = 96;
 const CITATION_PATTERN = /\[((?:arXiv:(?:[a-z-]+\/\d{7}(?:v\d+)?|\d{4}\.\d{4,5}(?:v\d+)?)(?:,\s*)?)+)\]/gi;
