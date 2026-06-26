@@ -583,7 +583,8 @@ function galleryIntroHTML(stats) {
   return `
     <div class="console">
       <div class="console-head">
-        <h1>Every galaxy ever discussed.</h1>
+        <h1>Every galaxy ever discussed.<sup class="hero-note-mark">*</sup></h1>
+        <p class="hero-note"><span class="hero-note-mark">*</span>In &gt;2 sentences on arXiv.</p>
         <p class="console-lede">
           Look up a galaxy by name, descriptor, or drop its coordinates
           to see whether astronomers have discussed it.
@@ -705,9 +706,10 @@ function tileHTML(entity, index = 0) {
   const papers = entity.paper_count_total || entity.mention_count || 0;
   const corner = ra != null && dec != null ? `${ra.toFixed(1)}°, ${dec >= 0 ? "+" : ""}${dec.toFixed(1)}°` : "—";
   const image = imgUrl(entity);
+  const href = dossierHref(entity.slug);
   if (!image) {
     return `
-      <div class="tile noimg" data-open="${escapeHTML(entity.slug)}">
+      <a class="tile noimg" href="${href}" data-open="${escapeHTML(entity.slug)}">
         <svg class="field" viewBox="0 0 100 100" preserveAspectRatio="none">${placeholderField(entity.slug)}</svg>
         <div class="scrim"></div>
         <div class="corner">${ra != null ? `${ra.toFixed(1)}°` : "—"}</div>
@@ -715,11 +717,11 @@ function tileHTML(entity, index = 0) {
         <div class="meta">
           <div class="name">${escapeHTML(entity.name)}</div>
         </div>
-      </div>
+      </a>
     `;
   }
   return `
-    <div class="tile" data-open="${escapeHTML(entity.slug)}">
+    <a class="tile" href="${href}" data-open="${escapeHTML(entity.slug)}">
       <img src="${escapeHTML(image)}" alt="${escapeHTML(entity.name)}" loading="eager" fetchpriority="high" decoding="async" data-img-slug="${escapeHTML(entity.slug)}" data-img-index="${index}">
       <div class="scrim"></div>
       <div class="corner">${escapeHTML(corner)}</div>
@@ -727,7 +729,7 @@ function tileHTML(entity, index = 0) {
       <div class="meta">
         <div class="name">${escapeHTML(entity.name)}</div>
       </div>
-    </div>
+    </a>
   `;
 }
 
@@ -948,13 +950,16 @@ function quoteBlockHTML(source, quote, index) {
   const quoteText = quote.quote || "";
   if (!quoteText) return "";
   const id = quote.quote_id || `${source.mention_id || source.paper_id}-quote-${index}`;
-  const collapsed = state.expandedQuotes.has(id);
   const quoteUrl = ar5ivQuoteUrl(source.paper_id || source.arxiv_id, quoteText);
+  // Whether a passage is collapsible depends on rendered height, not word
+  // count, so the toggle starts hidden and refreshQuoteClamps() reveals it
+  // only for passages that actually overflow the clamp.
+  const expanded = state.expandedQuotes.has(id);
   return `
     <div class="quote-block">
-      <blockquote class="quote ${collapsed ? "collapsed" : ""}">${escapeHTML(quoteText)}</blockquote>
+      <blockquote class="quote ${expanded ? "" : "collapsed"}">${escapeHTML(quoteText)}</blockquote>
       <div class="quote-actions">
-        <button class="quote-toggle" data-quote="${escapeHTML(id)}">${collapsed ? "— Read full passage" : "— Collapse passage"}</button>
+        <button class="quote-toggle" data-quote="${escapeHTML(id)}" hidden>${expanded ? "— Collapse passage" : "— Read full passage"}</button>
         ${
           quoteUrl
             ? `<a class="quote-jump" href="${escapeHTML(quoteUrl)}" target="_blank" rel="noopener">Jump to passage ${externalIcon()}</a>`
@@ -963,6 +968,21 @@ function quoteBlockHTML(source, quote, index) {
       </div>
     </div>
   `;
+}
+
+// Reveal the collapse toggle only for passages whose text overflows the
+// clamped height; passages that already fit get no button and no clamp.
+function refreshQuoteClamps(scope) {
+  scope.querySelectorAll(".quote-block").forEach((block) => {
+    const quote = block.querySelector(".quote");
+    const toggle = block.querySelector(".quote-toggle");
+    if (!quote || !toggle) return;
+    const expanded = state.expandedQuotes.has(toggle.dataset.quote);
+    quote.classList.add("collapsed");
+    const overflows = quote.scrollHeight - quote.clientHeight > 1;
+    toggle.hidden = !overflows;
+    if (!overflows || expanded) quote.classList.remove("collapsed");
+  });
 }
 
 function sourceHTML(source, index) {
@@ -1078,10 +1098,10 @@ function entryHTML(entity, loading = false) {
                   <h3>${entity.top_topic ? `Also tagged “${escapeHTML(entity.top_topic)}”` : "Galaxies sharing these topics"}</h3>
                   <div class="related-grid">
                     ${related.map((item) => `
-                      <div class="r-tile" data-open="${escapeHTML(item.slug)}">
+                      <a class="r-tile" href="${dossierHref(item.slug)}" data-open="${escapeHTML(item.slug)}">
                         <img src="${escapeHTML(imgUrl(item))}" alt="${escapeHTML(item.name)}" loading="eager" fetchpriority="high" decoding="async" data-img-slug="${escapeHTML(item.slug)}">
                         <div class="rname">${escapeHTML(item.name)}</div>
-                      </div>
+                      </a>
                     `).join("")}
                   </div>
                 </div>`
@@ -1142,6 +1162,7 @@ function render({ focusSearch = false } = {}) {
   root.innerHTML = `<div class="app">${mastheadHTML()}${page}</div>`;
   bindEvents();
   initImages(root);
+  refreshQuoteClamps(root);
   const focusSel = state.focusField ? `[data-field="${state.focusField}"]` : (focusSearch ? '[data-field="heroName"]' : null);
   if (focusSel) {
     const input = root.querySelector(focusSel);
@@ -1362,6 +1383,9 @@ function handleClick(event) {
 
   const openItem = event.target.closest("[data-open]");
   if (openItem) {
+    // Let modifier/middle clicks fall through to native "open in new tab".
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
+    event.preventDefault();
     openEntity(openItem.dataset.open);
   }
 }
@@ -1438,8 +1462,12 @@ function applyHash() {
   }
 }
 
+function dossierHref(slug) {
+  return `#/g/${encodeURIComponent(slug)}`;
+}
+
 function openEntity(slug) {
-  window.location.hash = `#/g/${encodeURIComponent(slug)}`;
+  window.location.hash = dossierHref(slug);
 }
 
 function goHome() {
@@ -1476,6 +1504,9 @@ async function init() {
 
   window.addEventListener("hashchange", applyHash);
   window.addEventListener("keydown", handleKeys);
+  window.addEventListener("resize", () => {
+    if (state.route === "entry") refreshQuoteClamps(root);
+  });
   applyHash();
   scheduleFullIndexLoad();
 }
