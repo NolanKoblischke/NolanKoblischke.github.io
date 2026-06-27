@@ -5,6 +5,7 @@ const state = {
   slug: null,
   query: "",
   filter: "all",
+  filtersOpen: false,
   searchMode: "name",
   coordRA: "",
   coordDec: "",
@@ -683,9 +684,21 @@ function filterbarHTML() {
       return `<button class="${active ? `on ${state.sortDir}` : ""}" data-sort="${key}" title="Sort ${next}">${label}${dir}</button>`;
     })
     .join("");
-  const filterCount = getFilters().length - 1;
+  const allFilters = getFilters();
+  const filterCount = allFilters.length - 1;
+  const active = allFilters.find((f) => f.id === state.filter) || allFilters[0];
+  const activeLabel = active.id === "all" ? "All galaxies" : active.label;
+  const activeCount = active.count ?? state.entities.filter(active.test).length;
   return `
-    <aside class="filter-rail">
+    <aside class="filter-rail ${state.filtersOpen ? "open" : ""}">
+      <button class="filter-toggle ${state.filter !== "all" ? "is-filtered" : ""}" data-action="toggle-filters" aria-expanded="${state.filtersOpen ? "true" : "false"}">
+        <span class="ft-lead">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="10" y1="18" x2="14" y2="18"></line></svg>
+          <span>Filter &amp; sort</span>
+        </span>
+        <span class="ft-current">${escapeHTML(activeLabel)} <span class="ft-ct">${fmtCount(activeCount)}</span></span>
+        <svg class="ft-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </button>
       <div class="rail-block">
         <div class="rail-head">Sort</div>
         <div class="rail-sort">${sorts}</div>
@@ -1304,6 +1317,7 @@ function handleClick(event) {
   const filterButton = event.target.closest("[data-filter]");
   if (filterButton) {
     state.filter = filterButton.dataset.filter;
+    state.filtersOpen = false;
     state.coordResults = null;
     resetVisibleLimit();
     if (!state.fullIndexLoaded) loadFullIndex({ renderAfter: true });
@@ -1337,7 +1351,10 @@ function handleClick(event) {
   const actionButton = event.target.closest("[data-action]");
   if (actionButton) {
     const action = actionButton.dataset.action;
-    if (action === "home") {
+    if (action === "toggle-filters") {
+      state.filtersOpen = !state.filtersOpen;
+      refreshGalleryResults();
+    } else if (action === "home") {
       event.preventDefault();
       goHome();
     } else if (action === "home-reset") {
