@@ -1103,12 +1103,6 @@ code {
 }
 
 @media (max-width: 720px) {
-  .coord-field {
-    grid-template-columns: 1fr;
-  }
-  .find-btn {
-    padding: 14px;
-  }
   .coord-hit {
     grid-template-columns: 72px 1fr auto;
     gap: 14px;
@@ -1406,6 +1400,77 @@ code {
   gap: 6px;
 }
 
+/* Collapsible filter trigger — only shown below the desktop breakpoint */
+.filter-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 11px;
+  background: var(--bg-2);
+  color: var(--ink-dim);
+  text-align: left;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.filter-toggle:hover {
+  border-color: var(--accent-dim);
+}
+
+.filter-toggle.is-filtered {
+  border-color: var(--accent-dim);
+  color: var(--ink);
+}
+
+.filter-toggle .ft-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+.filter-toggle .ft-lead svg {
+  width: 15px;
+  height: 15px;
+  color: var(--accent);
+}
+
+.filter-toggle .ft-current {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.filter-toggle .ft-ct {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-left: 3px;
+}
+
+.filter-toggle .ft-chev {
+  width: 16px;
+  height: 16px;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.filter-rail.open .filter-toggle .ft-chev {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 1040px) {
   .console {
     grid-template-columns: 1fr;
@@ -1421,12 +1486,30 @@ code {
     max-height: none;
     overflow: visible;
     order: -1;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .filter-toggle {
+    display: flex;
+  }
+  /* Concept list is hidden behind the toggle so the grid sits right below it */
+  .filter-rail:not(.open) .rail-block {
+    display: none;
+  }
+  .filter-rail.open .rail-block {
+    padding-top: 4px;
+  }
+  .filter-rail.open .rail-chips {
+    max-height: 46vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 2px 4px;
+    margin: -2px;
+  }
+  .filter-rail.open .rail-sort {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px 32px;
-  }
-  .rail-block {
-    flex: 1 1 auto;
+    gap: 10px 20px;
   }
 }
 
@@ -1694,5 +1777,118 @@ code {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
+  }
+}
+
+/* ============================================================
+   Phone layout. Comes after every base rule so these win
+   regardless of earlier source order.
+   ============================================================ */
+@media (max-width: 600px) {
+  .gallery-page {
+    padding: 0 16px 56px;
+  }
+
+  .console {
+    padding: 24px 0 22px;
+    gap: 20px;
+  }
+
+  /* Stack RA / Dec / button so nothing overflows the viewport.
+     minmax(0, …) lets the tracks shrink past the inputs' intrinsic size. */
+  .coord-field {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .coord-cell {
+    min-width: 0;
+  }
+
+  .find-btn {
+    grid-column: 1 / -1;
+    padding: 13px;
+    width: 100%;
+  }
+
+  .sb-field {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .coord-cell {
+    padding: 11px 12px;
+    border-radius: 10px;
+  }
+
+  .sb-hint {
+    line-height: 1.45;
+  }
+
+  /* Two-up tiles read better than tiny three-up ones on a phone */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tile .name {
+    font-size: 16px;
+  }
+
+  /* Dossier sources: stack the citation meta above its passage */
+  .source {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .source-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+  }
+
+  .source-meta .as {
+    margin-top: 0;
+  }
+
+  .source-body .summary {
+    font-size: 16.5px;
+  }
+
+  .entry-head {
+    gap: 24px;
+  }
+
+  .title-block h1 {
+    margin-bottom: 16px;
+  }
+
+  .infobox {
+    grid-template-columns: 1fr;
+    gap: 2px 0;
+  }
+
+  .infobox dt {
+    margin-top: 12px;
+  }
+
+  .infobox dd {
+    margin-bottom: 2px;
+  }
+
+  .section-head h2 {
+    font-size: 19px;
+  }
+
+  .coord-results-head {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+}
+
+/* Very narrow phones: a single column of coordinate inputs */
+@media (max-width: 380px) {
+  .coord-field {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
