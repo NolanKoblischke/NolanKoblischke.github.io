@@ -1,0 +1,272 @@
+[
+  {
+    "source_id": "4000764080945",
+    "ra_deg": 33.016330765281005,
+    "dec_deg": 0.4543079036885913,
+    "coordinate_frame": "ICRS",
+    "archive": "Hubble Legacy Archive",
+    "archive_url": "https://hla.stsci.edu/",
+    "instrument": "ACS/WFC",
+    "filter": "F814W",
+    "mast_observation_id": "26438761",
+    "source_fits_sha256": "ffa56f48dc9551d7781400889a26b7de034b828d793ebbdce27fd88f0f733e4b",
+    "image": "hst_4000764080945.png",
+    "image_sha256": "042e15b9aa1e06cc9fe85b6bf61106a5a6f13af6342b8e6612a2038d305c4ce5",
+    "native_pixel_scale_arcsec": 0.05,
+    "field_of_view_arcsec": 2.65,
+    "native_crop_pixels": [
+      53,
+      53
+    ],
+    "crop_center_zero_based": [
+      150,
+      150
+    ],
+    "display": "Same crop and arcsinh stretch as the supplied overview: background and MAD noise from a 5\u20137 arcsec annulus; nonnegative intensity / (3 sigma); 99.5th percentile white point; lower origin; nearest-neighbour display at 512\u00d7512.",
+    "source_fits_filename": "4000764080945_F814W_26438761.fits",
+    "coordinate_source": "top600_research_oct15/results.csv in the Geir interesting project",
+    "catalog": "Hubble Source Catalog"
+  },
+  {
+    "source_id": "4001237742563",
+    "ra_deg": 255.30690131434386,
+    "dec_deg": 64.15512454317252,
+    "coordinate_frame": "ICRS",
+    "archive": "Hubble Legacy Archive",
+    "archive_url": "https://hla.stsci.edu/",
+    "instrument": "ACS/WFC",
+    "filter": "F814W",
+    "mast_observation_id": "26429736",
+    "source_fits_sha256": "0d4f25776f04c8ab143a8fc31e2a71ba1a001dffe6412d66c20789e35bebe514",
+    "image": "hst_4001237742563.png",
+    "image_sha256": "b3fe1d35d83de5a4a74b115a68d096672c30f11b129a8ddd6cb397714d674cd7",
+    "native_pixel_scale_arcsec": 0.05,
+    "field_of_view_arcsec": 6.05,
+    "native_crop_pixels": [
+      121,
+      121
+    ],
+    "crop_center_zero_based": [
+      150,
+      150
+    ],
+    "display": "Same crop and arcsinh stretch as the supplied overview: background and MAD noise from a 5\u20137 arcsec annulus; nonnegative intensity / (3 sigma); 99.5th percentile white point; lower origin; nearest-neighbour display at 512\u00d7512.",
+    "source_fits_filename": "4001237742563_F814W_26429736.fits",
+    "coordinate_source": "top600_research_oct15/results.csv in the Geir interesting project",
+    "catalog": "Hubble Source Catalog"
+  },
+  {
+    "source_id": "4000713672180",
+    "ra_deg": 186.8030072130094,
+    "dec_deg": 23.860091542338495,
+    "coordinate_frame": "ICRS",
+    "archive": "Hubble Legacy Archive",
+    "archive_url": "https://hla.stsci.edu/",
+    "instrument": "ACS/WFC",
+    "filter": "F606W + F814W",
+    "mast_observation_id": "26464493",
+    "source_fits_sha256": "f5052b87996a3da0070d82bb7754eb721f7b9b3f0cfd7a2ca2489a05655bb2ab",
+    "image": "hst_4000713672180_optical.png",
+    "image_sha256": "aeeae5f29ca4797dac5369010c99c0a8c23e40e3a80d7b197db1fe90418e1ff4",
+    "native_pixel_scale_arcsec": 0.05,
+    "field_of_view_arcsec": 1.65,
+    "native_crop_pixels": [
+      33,
+      33
+    ],
+    "crop_center_zero_based": [
+      150,
+      150
+    ],
+    "source_fits_filename": "4000713672180_F814W_26464493.fits",
+    "coordinate_source": "top600_research_oct15/results.csv in the Geir interesting project",
+    "catalog": "Hubble Source Catalog",
+    "monochrome_image": "hst_4000713672180.png",
+    "monochrome_image_sha256": "d838184c2a83867eca27ada6895b523bceaddb9e8aad44bb80943cdea47193fd",
+    "monochrome_display": "Same crop and arcsinh stretch as the supplied overview: background and MAD noise from a 5\u20137 arcsec annulus; nonnegative intensity / (3 sigma); 99.5th percentile white point; lower origin; nearest-neighbour display at 512\u00d7512.",
+    "composite_sources": [
+      {
+        "filter": "F606W",
+        "source_fits_filename": "4000713672180_F606W_26464829.fits",
+        "source_fits_sha256": "72b547461ec60134404b2663af65b1253acd7781604b5c4ce38d044608d62617",
+        "mast_product": "mast:HST/product/hst_13449_04_acs_wfc_f606w_jccs04_drc.fits",
+        "calibration_factor_jy_per_input_unit": 9.202960018103545e-08,
+        "background_jy_per_pixel": 9.57495027427995e-09,
+        "assumed_native_fwhm_arcsec": 0.1,
+        "gaussian_smoothing_sigma_pixels": 0.9495706582667843
+      },
+      {
+        "filter": "F814W",
+        "source_fits_filename": "4000713672180_F814W_26464493.fits",
+        "source_fits_sha256": "f5052b87996a3da0070d82bb7754eb721f7b9b3f0cfd7a2ca2489a05655bb2ab",
+        "mast_product": "mast:HST/product/hst_13449_05_acs_wfc_f814w_jccs05_drc.fits",
+        "calibration_factor_jy_per_input_unit": 1.5293380336704303e-07,
+        "background_jy_per_pixel": 1.2438787823432778e-08,
+        "assumed_native_fwhm_arcsec": 0.105,
+        "gaussian_smoothing_sigma_pixels": 0.909805644831815
+      }
+    ],
+    "colour_rendering": {
+      "type": "representative two-band optical colour",
+      "red": "F814W",
+      "blue": "F606W",
+      "green": "(F606W + F814W) / 2 in calibrated flux density",
+      "white_reference": "equal f_nu in the two calibrated bands (zero AB colour); no target-based white balancing",
+      "common_gaussian_fwhm_arcsec": 0.15,
+      "alignment": "common ICRS WCS grid; 0.05 arcsec pixels; north up, east left; similarity refinement when supported by field-star matches",
+      "registration_check": {
+        "source_id": "4000713672180",
+        "matched_stars": 4,
+        "retained_stars": 4,
+        "f606w_shift_x_y_pixels": [
+          0.7707133216318596,
+          0.7083948032116041
+        ],
+        "scatter_x_y_pixels": [
+          0.5194460832036106,
+          0.4791225393204599
+        ],
+        "similarity_fit": {
+          "target_f606w_shift_x_y_pixels": [
+            -0.5260598724159288,
+            2.15091178947621
+          ],
+          "scale_delta": 0.0007704579532656908,
+          "rotation_radian": 0.0004562915943431278,
+          "residual_rms_pixels": 0.05906009223106652
+        }
+      },
+      "stretch": "shared Lupton arcsinh; stretch=3; Q=5",
+      "intensity_scale_jy_per_pixel": 1.3187924115600684e-09,
+      "saturation_multiplier": 0.65,
+      "native_crop_shape": [
+        33,
+        33
+      ],
+      "display_size_pixels": [
+        512,
+        512
+      ],
+      "display_resampling": "nearest neighbour",
+      "limitations": "Two filters do not supply a measured green band or natural RGB. Gaussian PSF matching is approximate. No component colour inference from display hues."
+    },
+    "rendering_references": [
+      "https://hla.stsci.edu/hla_faq.html#General9",
+      "https://docs.astropy.org/en/stable/visualization/rgb.html"
+    ]
+  },
+  {
+    "source_id": "4001169855693",
+    "ra_deg": 61.140120760611644,
+    "dec_deg": 11.124910746952736,
+    "coordinate_frame": "ICRS",
+    "archive": "Hubble Legacy Archive",
+    "archive_url": "https://hla.stsci.edu/",
+    "instrument": "ACS/WFC + WFPC2/PC",
+    "filter": "F606W + F814W",
+    "mast_observation_id": "26455305",
+    "source_fits_sha256": "1fc5eaf8362cb6461c39b05a5667d03c165d1c47110ec03b60278ae5bc1ef5d3",
+    "image": "hst_4001169855693_optical.png",
+    "image_sha256": "bd2dd289624b97881a95397a46e13adc7854244f29989ba3149a983a8063cfba",
+    "native_pixel_scale_arcsec": 0.05,
+    "field_of_view_arcsec": 7.05,
+    "native_crop_pixels": [
+      141,
+      141
+    ],
+    "crop_center_zero_based": [
+      150,
+      150
+    ],
+    "source_fits_filename": "4001169855693_F814W_26455305.fits",
+    "coordinate_source": "top600_research_oct15/results.csv in the Geir interesting project",
+    "catalog": "Hubble Source Catalog",
+    "monochrome_image": "hst_4001169855693.png",
+    "monochrome_image_sha256": "e554e525a9c80a4c838d06b2ea893ce9b8efb2ed5389b4387dc004492749ae05",
+    "monochrome_display": "Same crop and arcsinh stretch as the supplied overview: background and MAD noise from a 5\u20137 arcsec annulus; nonnegative intensity / (3 sigma); 99.5th percentile white point; lower origin; nearest-neighbour display at 512\u00d7512.",
+    "composite_sources": [
+      {
+        "filter": "F606W",
+        "source_fits_filename": "4001169855693_F606W_208037013.fits",
+        "source_fits_sha256": "239b4682b36ffbe0260bf441040990c2692325f68f9057f7d98e0fa71b9c8d72",
+        "mast_product": "mast:HST/product/hst_11103_22_wfpc2_pc_f606w_u9yt22_drz.fits",
+        "calibration_factor_jy_per_input_unit": 2.734880551704422e-06,
+        "background_jy_per_pixel": 8.931972589607044e-10,
+        "assumed_native_fwhm_arcsec": 0.15,
+        "gaussian_smoothing_sigma_pixels": 0.8450645375074272
+      },
+      {
+        "filter": "F814W",
+        "source_fits_filename": "4001169855693_F814W_26455305.fits",
+        "source_fits_sha256": "1fc5eaf8362cb6461c39b05a5667d03c165d1c47110ec03b60278ae5bc1ef5d3",
+        "mast_product": "mast:HST/product/hst_12884_76_acs_wfc_f814w_jc3976_drc.fits",
+        "calibration_factor_jy_per_input_unit": 1.5299812134093345e-07,
+        "background_jy_per_pixel": 1.5349778687337052e-08,
+        "assumed_native_fwhm_arcsec": 0.105,
+        "gaussian_smoothing_sigma_pixels": 1.2417247617408926
+      }
+    ],
+    "colour_rendering": {
+      "type": "representative two-band optical colour",
+      "red": "F814W",
+      "blue": "F606W",
+      "green": "(F606W + F814W) / 2 in calibrated flux density",
+      "white_reference": "equal f_nu in the two calibrated bands (zero AB colour); no target-based white balancing",
+      "common_gaussian_fwhm_arcsec": 0.18,
+      "alignment": "common ICRS WCS grid; 0.05 arcsec pixels; north up, east left; similarity refinement when supported by field-star matches",
+      "registration_check": {
+        "source_id": "4001169855693",
+        "matched_stars": 0,
+        "f606w_shift_x_y_pixels": [
+          0,
+          0
+        ]
+      },
+      "stretch": "shared Lupton arcsinh; stretch=3; Q=5",
+      "intensity_scale_jy_per_pixel": 2.198810737123054e-09,
+      "saturation_multiplier": 0.65,
+      "native_crop_shape": [
+        141,
+        141
+      ],
+      "display_size_pixels": [
+        512,
+        512
+      ],
+      "display_resampling": "nearest neighbour",
+      "limitations": "Two filters do not supply a measured green band or natural RGB. Gaussian PSF matching is approximate. No component colour inference from display hues."
+    },
+    "rendering_references": [
+      "https://hla.stsci.edu/hla_faq.html#General9",
+      "https://docs.astropy.org/en/stable/visualization/rgb.html"
+    ]
+  },
+  {
+    "source_id": "4001444190238",
+    "ra_deg": 183.5664723988987,
+    "dec_deg": 33.14454649555318,
+    "coordinate_frame": "ICRS",
+    "archive": "Hubble Legacy Archive",
+    "archive_url": "https://hla.stsci.edu/",
+    "instrument": "ACS/WFC",
+    "filter": "F814W",
+    "mast_observation_id": "26385415",
+    "source_fits_sha256": "8c7bee36194b4b7d2014740f6a91e26bbddbc8746879f5791788370d1f16feeb",
+    "image": "hst_4001444190238.png",
+    "image_sha256": "18d278080933e5f65dd29c862afefdceec4515490065b5a1c6c5dfd4a238c1f1",
+    "native_pixel_scale_arcsec": 0.05,
+    "field_of_view_arcsec": 2.25,
+    "native_crop_pixels": [
+      45,
+      45
+    ],
+    "crop_center_zero_based": [
+      150,
+      150
+    ],
+    "display": "Same crop and arcsinh stretch as the supplied overview: background and MAD noise from a 5\u20137 arcsec annulus; nonnegative intensity / (3 sigma); 99.5th percentile white point; lower origin; nearest-neighbour display at 512\u00d7512.",
+    "source_fits_filename": "4001444190238_F814W_26385415.fits",
+    "coordinate_source": "top600_research_oct15/results.csv in the Geir interesting project",
+    "catalog": "Hubble Source Catalog"
+  }
+]

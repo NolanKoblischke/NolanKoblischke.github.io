@@ -55,6 +55,19 @@
   .intro p { margin-bottom: 16px; }
   .intro a { color: #2c2416; }
 
+  .section-heading {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    color: #5a4a32;
+    margin-bottom: 8px;
+  }
+
   .plates {
     max-width: 1100px;
     margin: 40px auto;
@@ -107,7 +120,7 @@
     letter-spacing: 0.02em;
   }
 
-  .plate .simbad-id {
+  .plate .simbad-id, .plate .source-id {
     font-size: 0.78rem;
     color: #9a8a6a;
     font-family: "Courier New", monospace;
@@ -128,6 +141,11 @@
     color: #9a8a6a;
     margin-top: 10px;
     letter-spacing: 0.03em;
+  }
+  .plate .image-scale {
+    font-size: 0.8rem;
+    color: #7a6a52;
+    margin-top: 4px;
   }
 
   .plate .viewer-link {
@@ -173,7 +191,7 @@
   <p>
     In the tradition of Halton Arp's landmark 1966 <em>Atlas of Peculiar Galaxies</em>, this page presents
     a collection of galaxies with unusual morphologies identified using AION-Search, a semantic search engine for
-    galaxy images trained on AI-generated captions.
+    galaxy images trained on AI-generated captions, or other anomaly detection methods that use vision-language models.
     The comments accompanying each image were written by the author and are not AI-generated.
   </p>
 </div>
@@ -440,13 +458,73 @@
 
 </div>
 
+<section id="hubble-images" aria-labelledby="hubble-heading">
+  <div class="section-heading">
+    <h2 id="hubble-heading">Hubble Legacy Archive</h2>
+  </div>
+
+  <div class="plates">
+    <div class="plate" id="hst-4000764080945">
+      <div class="plate-number">Image 21</div>
+      <div class="img-frame"><a href="assets/hst_4000764080945.png" target="_blank" rel="noopener"><img src="assets/hst_4000764080945.png" width="512" height="512" loading="lazy" alt="Hubble F814W close-up of two resolved bright components, source 4000764080945"></a></div>
+      <div class="coords">RA 33.016331&deg;<br>Dec +0.454308&deg;</div>
+      <div class="source-id">Hubble Source Catalog ID<br>4000764080945</div>
+      <div class="description">Double?</div>
+      <div class="survey-tag">Hubble Legacy Archive &middot; F814W</div>
+      <div class="image-scale">Field of view: 2.65&Prime; &times; 2.65&Prime;</div>
+    </div>
+
+    <div class="plate" id="hst-4001237742563">
+      <div class="plate-number">Image 22</div>
+      <div class="img-frame"><a href="assets/hst_4001237742563.png" target="_blank" rel="noopener"><img src="assets/hst_4001237742563.png" width="512" height="512" loading="lazy" alt="Hubble F814W close-up of two galaxy cores surrounded by curved features, source 4001237742563"></a></div>
+      <div class="coords">RA 255.306901&deg;<br>Dec +64.155125&deg;</div>
+      <div class="source-id">Hubble Source Catalog ID<br>4001237742563</div>
+      <div class="description">Two galaxy cores + curved features.</div>
+      <div class="survey-tag">Hubble Legacy Archive &middot; F814W</div>
+      <div class="image-scale">Field of view: 6.05&Prime; &times; 6.05&Prime;</div>
+    </div>
+
+    <div class="plate" id="hst-4000713672180">
+      <div class="plate-number">Image 23</div>
+      <div class="img-frame"><a href="assets/hst_4000713672180_optical.png" target="_blank" rel="noopener"><img src="assets/hst_4000713672180_optical.png" width="512" height="512" loading="lazy" alt="Hubble optical colour close-up of three resolved components in a compact triangle, Hubble Source Catalog ID 4000713672180"></a></div>
+      <div class="coords">RA 186.803007&deg;<br>Dec +23.860092&deg;</div>
+      <div class="source-id">Hubble Source Catalog ID<br>4000713672180</div>
+      <div class="description">Triple?</div>
+      <div class="survey-tag">Hubble Legacy Archive<br>F606W + F814W optical colour</div>
+      <div class="image-scale">Field of view: 1.65&Prime; &times; 1.65&Prime;</div>
+    </div>
+
+    <div class="plate" id="hst-4001169855693">
+      <div class="plate-number">Image 24</div>
+      <div class="img-frame"><a href="assets/hst_4001169855693_optical.png" target="_blank" rel="noopener"><img src="assets/hst_4001169855693_optical.png" width="512" height="512" loading="lazy" alt="Hubble optical colour close-up of an elongated galaxy with two nearby companions, Hubble Source Catalog ID 4001169855693"></a></div>
+      <div class="coords">RA 61.140121&deg;<br>Dec +11.124911&deg;</div>
+      <div class="source-id">Hubble Source Catalog ID<br>4001169855693</div>
+      <div class="description">Edge-on galaxy with two objects either side. If this was lensing I'd expect the lensing to occur by the core.</div>
+      <div class="survey-tag">Hubble Legacy Archive<br>F606W + F814W optical colour</div>
+      <div class="image-scale">Field of view: 7.05&Prime; &times; 7.05&Prime;</div>
+    </div>
+
+    <div class="plate" id="hst-4001444190238">
+      <div class="plate-number">Image 25</div>
+      <div class="img-frame"><a href="assets/hst_4001444190238.png" target="_blank" rel="noopener"><img src="assets/hst_4001444190238.png" width="512" height="512" loading="lazy" alt="Hubble F814W close-up of a bright central source with a surrounding ring-like feature, source 4001444190238"></a></div>
+      <div class="coords">RA 183.566472&deg;<br>Dec +33.144546&deg;</div>
+      <div class="source-id">Hubble Source Catalog ID<br>4001444190238</div>
+      <div class="description">Ring-like</div>
+      <div class="survey-tag">Hubble Legacy Archive &middot; F814W</div>
+      <div class="image-scale">Field of view: 2.25&Prime; &times; 2.25&Prime;</div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>
-    Images: DESI Legacy Imaging Surveys DR10 &amp; Hyper Suprime-Cam Subaru Strategic Program DR3
+    Images: DESI Legacy Imaging Surveys DR10, Hyper Suprime-Cam Subaru Strategic Program DR3,
+    &amp; <a href="https://hla.stsci.edu/" target="_blank" rel="noopener">Hubble Legacy Archive</a>
   </p>
   <p>
     Galaxies identified with <a href="https://aion-search.github.io/">AION-Search</a>,
     a semantic search engine for galaxy images.
+    Hubble images were found using an anomaly detection method that uses vision-language models.
   </p>
   <p>
     Inspired by Arp, H. 1966, <em>Atlas of Peculiar Galaxies</em>, ApJS, 14, 1
