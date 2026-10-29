@@ -120,6 +120,41 @@
     letter-spacing: 0.02em;
   }
 
+  .coordinate-copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font: 0.7rem "Courier New", monospace;
+  }
+  .coordinate-copy button {
+    appearance: none;
+    background: none;
+    border: 0;
+    border-bottom: 1px dotted #c8b99a;
+    color: #7a6a52;
+    cursor: pointer;
+    font: inherit;
+    min-height: 24px;
+    padding: 2px 4px;
+  }
+  .coordinate-copy button:first-child { min-width: 8.5em; }
+  .coordinate-copy button:last-of-type { min-width: 4.5em; }
+  .coordinate-copy button:hover { color: #2c2416; border-color: #7a6a52; }
+  .coordinate-copy button:focus-visible {
+    outline: 2px solid #9a8a6a;
+    outline-offset: 3px;
+  }
+  .copy-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
   .plate .simbad-id, .plate .source-id {
     font-size: 0.78rem;
     color: #9a8a6a;
@@ -178,6 +213,7 @@
     .plates { grid-template-columns: 1fr; }
   }
 </style>
+<script src="assets/coordinates.js" defer></script>
 </head>
 <body>
 
@@ -201,7 +237,7 @@
   <div class="plate">
     <div class="plate-number">Image 1</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=239.3291&dec=27.0713&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_01.jpg" alt="Image 1"></a></div>
-    <div class="coords">RA 239.3291 &nbsp; Dec +27.0713</div>
+    <div class="coords" data-ra="239.3291" data-dec="+27.0713">RA 239.3291 &nbsp; Dec +27.0713</div>
     <div class="simbad-id">2MASX J15571939+2704167</div>
     <div class="description">
       Two galaxies sitting in a shared blue ring. The DR9 photo-z estimates differ (z=0.13 vs z=0.06), which suggests the pair may be a projected coincidence rather than physically associated.
@@ -214,7 +250,7 @@
   <div class="plate">
     <div class="plate-number">Image 2</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=173.0954&dec=28.0501&zoom=14&layer=ls-dr10" target="_blank"><img src="assets/image_02.jpg" alt="Image 2"></a></div>
-    <div class="coords">RA 173.0954 &nbsp; Dec +28.0501</div>
+    <div class="coords" data-ra="173.0954" data-dec="+28.0501">RA 173.0954 &nbsp; Dec +28.0501</div>
     <div class="simbad-id">Z 156-98 (EmG)</div>
     <div class="description">
       A galaxy with a shield-like tidal feature, likely a shell. A neighbour is nearby with similar photo-z.
@@ -227,7 +263,7 @@
   <div class="plate">
     <div class="plate-number">Image 3</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=16.3170&dec=1.4392&zoom=16&layer=hsc-dr3" target="_blank"><img src="assets/image_03.jpg" alt="Image 3"></a></div>
-    <div class="coords">RA 16.3170 &nbsp; Dec +1.4392</div>
+    <div class="coords" data-ra="16.3170" data-dec="+1.4392">RA 16.3170 &nbsp; Dec +1.4392</div>
     <div class="simbad-id">&mdash;</div>
     <div class="description">
       This might be a peculiar looking gravitational lens. Not found in existing lens catalogues.
@@ -240,7 +276,7 @@
   <div class="plate">
     <div class="plate-number">Image 4</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=61.4532&dec=-6.3240&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_04.jpg" alt="Image 4"></a></div>
-    <div class="coords">RA 61.4532 &nbsp; Dec &minus;6.3240</div>
+    <div class="coords" data-ra="61.4532" data-dec="-6.3240">RA 61.4532 &nbsp; Dec &minus;6.3240</div>
     <div class="simbad-id">SDSS J040548.78-061925.8 (Sy2)</div>
     <div class="description">
       A bright yellow core with faint blue spiral arms. SIMBAD lists this as a Seyfert 2 galaxy, indicating an active galactic nucleus.
@@ -253,7 +289,7 @@
   <div class="plate">
     <div class="plate-number">Image 5</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=330.8739&dec=-66.8016&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_05.jpg" alt="Image 5"></a></div>
-    <div class="coords">RA 330.8739 &nbsp; Dec &minus;66.8016</div>
+    <div class="coords" data-ra="330.8739" data-dec="-66.8016">RA 330.8739 &nbsp; Dec &minus;66.8016</div>
     <div class="simbad-id">LEDA 301821</div>
     <div class="description">
       A bright tidal feature (stream?) that appears to be a stream with a curiously flat region.
@@ -266,7 +302,7 @@
   <div class="plate">
     <div class="plate-number">Image 6</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=314.1508&dec=-3.3706&zoom=14&layer=ls-dr10" target="_blank"><img src="assets/image_06.jpg" alt="Image 6"></a></div>
-    <div class="coords">RA 314.1508 &nbsp; Dec &minus;3.3706</div>
+    <div class="coords" data-ra="314.1508" data-dec="-3.3706">RA 314.1508 &nbsp; Dec &minus;3.3706</div>
     <div class="simbad-id">LEDA 65753 (Sy2)</div>
     <div class="description">
       Two galaxies that appear to be interacting. The lower one with extreme tidal features. SIMBAD also lists this as a Seyfert 2 galaxy (AGN).
@@ -279,7 +315,7 @@
   <div class="plate">
     <div class="plate-number">Image 7</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=317.7135&dec=-46.0893&zoom=14&layer=ls-dr10" target="_blank"><img src="assets/image_07.jpg" alt="Image 7"></a></div>
-    <div class="coords">RA 317.7135 &nbsp; Dec &minus;46.0893</div>
+    <div class="coords" data-ra="317.7135" data-dec="-46.0893">RA 317.7135 &nbsp; Dec &minus;46.0893</div>
     <div class="simbad-id">ESO 286-66</div>
     <div class="description">
       An edge-on disk galaxy with blue extensions above and below. I recommend zooming in.
@@ -292,7 +328,7 @@
   <div class="plate">
     <div class="plate-number">Image 8</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=147.7506&dec=-16.7079&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_08.jpg" alt="Image 8"></a></div>
-    <div class="coords">RA 147.7506 &nbsp; Dec &minus;16.7079</div>
+    <div class="coords" data-ra="147.7506" data-dec="-16.7079">RA 147.7506 &nbsp; Dec &minus;16.7079</div>
     <div class="simbad-id">&mdash;</div>
     <div class="description">
       Incredible tidal features.
@@ -305,7 +341,7 @@
   <div class="plate">
     <div class="plate-number">Image 9</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=17.0701&dec=-8.3885&zoom=14&layer=ls-dr10" target="_blank"><img src="assets/image_09.jpg" alt="Image 9"></a></div>
-    <div class="coords">RA 17.0701 &nbsp; Dec &minus;8.3885</div>
+    <div class="coords" data-ra="17.0701" data-dec="-8.3885">RA 17.0701 &nbsp; Dec &minus;8.3885</div>
     <div class="simbad-id">LEDA 3309022 (EmG)</div>
     <div class="description">
       Polar ring candidate. SIMBAD lists this as an emission-line galaxy.
@@ -318,7 +354,7 @@
   <div class="plate">
     <div class="plate-number">Image 10</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=141.3513&dec=4.5079&zoom=14&layer=ls-dr10" target="_blank"><img src="assets/image_10.jpg" alt="Image 10"></a></div>
-    <div class="coords">RA 141.3513 &nbsp; Dec +4.5079</div>
+    <div class="coords" data-ra="141.3513" data-dec="+4.5079">RA 141.3513 &nbsp; Dec +4.5079</div>
     <div class="simbad-id">MLCG 0837 (compact group)</div>
     <div class="description">
       A close interacting pair with a long tidal feature.
@@ -331,7 +367,7 @@
   <div class="plate">
     <div class="plate-number">Image 11</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=51.7006&dec=-2.7096&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_11.jpg" alt="Image 11"></a></div>
-    <div class="coords">RA 51.7006 &nbsp; Dec &minus;2.7096</div>
+    <div class="coords" data-ra="51.7006" data-dec="-2.7096">RA 51.7006 &nbsp; Dec &minus;2.7096</div>
     <div class="simbad-id">LEDA 176189 / 2MFGC 2839</div>
     <div class="description">
       A merging system with interesting tidal features.
@@ -344,7 +380,7 @@
   <div class="plate">
     <div class="plate-number">Image 12</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=348.7720&dec=-71.2724&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_12.jpg" alt="Image 12"></a></div>
-    <div class="coords">RA 348.7720 &nbsp; Dec &minus;71.2724</div>
+    <div class="coords" data-ra="348.7720" data-dec="-71.2724">RA 348.7720 &nbsp; Dec &minus;71.2724</div>
     <div class="simbad-id">LEDA 3978284 (EmG)</div>
     <div class="description">
       A pair of galaxies with a very faint ring.
@@ -357,7 +393,7 @@
   <div class="plate">
     <div class="plate-number">Image 13</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=30.6657&dec=-2.8527&zoom=16&layer=hsc-dr3" target="_blank"><img src="assets/image_13.jpg" alt="Image 13"></a></div>
-    <div class="coords">RA 30.6657 &nbsp; Dec &minus;2.8527</div>
+    <div class="coords" data-ra="30.6657" data-dec="-2.8527">RA 30.6657 &nbsp; Dec &minus;2.8527</div>
     <div class="simbad-id">&mdash;</div>
     <div class="description">
       A lens candidate. Not found in existing lens catalogues. Legacy Survey DR9 photo-z lists the central source around z=0.5 and the lensed images around z=1.06.
@@ -370,7 +406,7 @@
   <div class="plate">
     <div class="plate-number">Image 14</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=35.1759&dec=-0.1779&zoom=16&layer=hsc-dr3" target="_blank"><img src="assets/image_14.jpg" alt="Image 14"></a></div>
-    <div class="coords">RA 35.1759 &nbsp; Dec &minus;0.1779</div>
+    <div class="coords" data-ra="35.1759" data-dec="-0.1779">RA 35.1759 &nbsp; Dec &minus;0.1779</div>
     <div class="simbad-id">SDSSCGB 41808 (CGG)</div>
     <div class="description">
       Appears to be three aligned sources with a faint connecting feature, but unsure of the physical explanation. Not found in existing lens catalogues.
@@ -384,7 +420,7 @@
   <div class="plate">
     <div class="plate-number">Image 15</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=227.0217&dec=-25.7737&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_15.jpg" alt="Image 15"></a></div>
-    <div class="coords">RA 227.0217 &nbsp; Dec &minus;25.7737</div>
+    <div class="coords" data-ra="227.0217" data-dec="-25.7737">RA 227.0217 &nbsp; Dec &minus;25.7737</div>
     <div class="simbad-id">WISE J150805.20-254624.5 (G)</div>
     <div class="description">
       Ring galaxy candidate.
@@ -397,7 +433,7 @@
   <div class="plate">
     <div class="plate-number">Image 16</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=158.0531&dec=-1.4934&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_16.jpg" alt="Image 16"></a></div>
-    <div class="coords">RA 158.0531 &nbsp; Dec &minus;1.4934</div>
+    <div class="coords" data-ra="158.0531" data-dec="-1.4934">RA 158.0531 &nbsp; Dec &minus;1.4934</div>
     <div class="simbad-id">Z 9-75 (LSB)</div>
     <div class="description">
       Disturbed spiral with blue spots tracing an arm. DESI spectra for the <a href="https://www.legacysurvey.org/viewer/desi-spectrum/dr1/targetid2842490122010630" target="_blank">main galaxy</a> and <a href="https://www.legacysurvey.org/viewer/desi-spectrum/dr1/targetid39627751140885732" target="_blank">one of the blue spots</a>. Notably, this galaxy is disturbed by a nearby companion, so these likely are star-forming regions triggered by the interaction.
@@ -410,7 +446,7 @@
   <div class="plate">
     <div class="plate-number">Image 17</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=54.9070&dec=-38.0784&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_17.jpg" alt="Image 17"></a></div>
-    <div class="coords">RA 54.9070 &nbsp; Dec &minus;38.0784</div>
+    <div class="coords" data-ra="54.9070" data-dec="-38.0784">RA 54.9070 &nbsp; Dec &minus;38.0784</div>
     <div class="simbad-id">LEDA 613402 (G)</div>
     <div class="description">
       Ribbon-like tidal features.
@@ -423,7 +459,7 @@
   <div class="plate">
     <div class="plate-number">Image 18</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=210.3857&dec=-26.7680&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_18.jpg" alt="Image 18"></a></div>
-    <div class="coords">RA 210.3857 &nbsp; Dec &minus;26.7680</div>
+    <div class="coords" data-ra="210.3857" data-dec="-26.7680">RA 210.3857 &nbsp; Dec &minus;26.7680</div>
     <div class="simbad-id">LEDA 764105 (G)</div>
     <div class="description">
       Blue diffuse feature near a disturbed elliptical. Potentially a "smoke ring" candidate similar to the two found by <a href="https://arxiv.org/abs/2505.24755" target="_blank">SMUDGes VIII</a> Fig 6.
@@ -436,7 +472,7 @@
   <div class="plate">
     <div class="plate-number">Image 19</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=10.8534&dec=-20.6213&zoom=15&layer=ls-dr10" target="_blank"><img src="assets/image_19.jpg" alt="Image 19"></a></div>
-    <div class="coords">RA 10.8534 &nbsp; Dec &minus;20.6213</div>
+    <div class="coords" data-ra="10.8534" data-dec="-20.6213">RA 10.8534 &nbsp; Dec &minus;20.6213</div>
     <div class="simbad-id">ACO 2813 (ClG)</div>
     <div class="description">
       Galaxy cluster with potential lensing features. Not found in existing lens catalogues after checking <a href="https://sled.amnh.org/lenses/" target="_blank">SLED</a>.
@@ -450,7 +486,7 @@
   <div class="plate">
     <div class="plate-number">Image 20</div>
     <div class="img-frame"><a href="https://www.legacysurvey.org/viewer/?ra=23.4889&dec=-39.0883&zoom=15&layer=ls-dr10" target="_blank"><img src="https://www.legacysurvey.org/viewer/cutout.jpg?ra=23.4889&amp;dec=-39.0883&amp;layer=ls-dr10" alt="Image 20"></a></div>
-    <div class="coords">RA 23.4889 &nbsp; Dec &minus;39.0883</div>
+    <div class="coords" data-ra="23.4889" data-dec="-39.0883">RA 23.4889 &nbsp; Dec &minus;39.0883</div>
     <div class="survey-tag">DESI Legacy DR10</div>
     <br><a class="viewer-link" href="https://www.legacysurvey.org/viewer/?ra=23.4889&dec=-39.0883&zoom=15&layer=ls-dr10" target="_blank">View in Legacy Survey</a>
     &nbsp;&middot;&nbsp;<a class="viewer-link" href="https://astronolan-aion-search.hf.space/?s=eyJpcSI6W1syMy40ODg5LC0zOS4wODgzLDAuMDI1XV0sIml3IjpbMV19" target="_blank">Similarity Search</a>
@@ -467,7 +503,7 @@
     <div class="plate" id="hst-4000764080945">
       <div class="plate-number">Image 21</div>
       <div class="img-frame"><a href="assets/hst_4000764080945.png" target="_blank" rel="noopener"><img src="assets/hst_4000764080945.png" width="512" height="512" loading="lazy" alt="Hubble F814W close-up of two resolved bright components, source 4000764080945"></a></div>
-      <div class="coords">RA 33.016331&deg;<br>Dec +0.454308&deg;</div>
+      <div class="coords" data-ra="33.016331" data-dec="+0.454308">RA 33.016331&deg;<br>Dec +0.454308&deg;</div>
       <div class="source-id">Hubble Source Catalog ID<br>4000764080945</div>
       <div class="description">Double?</div>
       <div class="survey-tag">Hubble Legacy Archive &middot; F814W</div>
@@ -477,7 +513,7 @@
     <div class="plate" id="hst-4001237742563">
       <div class="plate-number">Image 22</div>
       <div class="img-frame"><a href="assets/hst_4001237742563.png" target="_blank" rel="noopener"><img src="assets/hst_4001237742563.png" width="512" height="512" loading="lazy" alt="Hubble F814W close-up of two galaxy cores surrounded by curved features, source 4001237742563"></a></div>
-      <div class="coords">RA 255.306901&deg;<br>Dec +64.155125&deg;</div>
+      <div class="coords" data-ra="255.306901" data-dec="+64.155125">RA 255.306901&deg;<br>Dec +64.155125&deg;</div>
       <div class="source-id">Hubble Source Catalog ID<br>4001237742563</div>
       <div class="description">Two galaxy cores + curved features.</div>
       <div class="survey-tag">Hubble Legacy Archive &middot; F814W</div>
@@ -487,7 +523,7 @@
     <div class="plate" id="hst-4000713672180">
       <div class="plate-number">Image 23</div>
       <div class="img-frame"><a href="assets/hst_4000713672180_optical.png" target="_blank" rel="noopener"><img src="assets/hst_4000713672180_optical.png" width="512" height="512" loading="lazy" alt="Hubble optical colour close-up of three resolved components in a compact triangle, Hubble Source Catalog ID 4000713672180"></a></div>
-      <div class="coords">RA 186.803007&deg;<br>Dec +23.860092&deg;</div>
+      <div class="coords" data-ra="186.803007" data-dec="+23.860092">RA 186.803007&deg;<br>Dec +23.860092&deg;</div>
       <div class="source-id">Hubble Source Catalog ID<br>4000713672180</div>
       <div class="description">Triple?</div>
       <div class="survey-tag">Hubble Legacy Archive<br>F606W + F814W optical colour</div>
@@ -497,7 +533,7 @@
     <div class="plate" id="hst-4001169855693">
       <div class="plate-number">Image 24</div>
       <div class="img-frame"><a href="assets/hst_4001169855693_optical.png" target="_blank" rel="noopener"><img src="assets/hst_4001169855693_optical.png" width="512" height="512" loading="lazy" alt="Hubble optical colour close-up of an elongated galaxy with two nearby companions, Hubble Source Catalog ID 4001169855693"></a></div>
-      <div class="coords">RA 61.140121&deg;<br>Dec +11.124911&deg;</div>
+      <div class="coords" data-ra="61.140121" data-dec="+11.124911">RA 61.140121&deg;<br>Dec +11.124911&deg;</div>
       <div class="source-id">Hubble Source Catalog ID<br>4001169855693</div>
       <div class="description">Edge-on galaxy with two objects either side. If this was lensing I'd expect the lensing to occur by the core.</div>
       <div class="survey-tag">Hubble Legacy Archive<br>F606W + F814W optical colour</div>
@@ -507,7 +543,7 @@
     <div class="plate" id="hst-4001444190238">
       <div class="plate-number">Image 25</div>
       <div class="img-frame"><a href="assets/hst_4001444190238.png" target="_blank" rel="noopener"><img src="assets/hst_4001444190238.png" width="512" height="512" loading="lazy" alt="Hubble F814W close-up of a bright central source with a surrounding ring-like feature, source 4001444190238"></a></div>
-      <div class="coords">RA 183.566472&deg;<br>Dec +33.144546&deg;</div>
+      <div class="coords" data-ra="183.566472" data-dec="+33.144546">RA 183.566472&deg;<br>Dec +33.144546&deg;</div>
       <div class="source-id">Hubble Source Catalog ID<br>4001444190238</div>
       <div class="description">Ring-like</div>
       <div class="survey-tag">Hubble Legacy Archive &middot; F814W</div>
