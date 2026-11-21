@@ -1,42 +1,39 @@
 <!DOCTYPE HTML>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nolan Koblischke</title>
-  <meta name="author" content="Nolan Koblischke">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nolan Koblischke - PhD student in Astrophysics at University of Toronto. Building AI tools for astronomical discovery including AION-Search, ChatGaia, and SpectraFM.">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="images/Nolan2 copy.jpg">
-  <link rel="apple-touch-icon" href="images/Nolan2 copy.jpg">
-
-  <!-- Preconnect to Google Fonts for faster loading -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Google Fonts - loaded with display=swap to prevent render blocking -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Stylesheet -->
-  <style>
+<meta charset="utf-8"/>
+<title>Nolan Koblischke</title>
+<meta content="Nolan Koblischke" name="author"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Nolan Koblischke - PhD student in Astrophysics at University of Toronto. Building AI tools for astronomical discovery including AION-Search, ChatGaia, and SpectraFM." name="description"/>
+<!-- Favicon -->
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<link href="images/touch-icon.png" rel="apple-touch-icon"/>
+<!-- Preconnect to Google Fonts for faster loading -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Google Fonts - loaded with display=swap to prevent render blocking -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/></noscript>
+<!-- Stylesheet -->
+<style>
     /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
-    
+
     /* Selection colors */
     ::selection {
       background: rgba(0, 122, 255, 0.3);
       color: #fff;
     }
-    
+
     ::-moz-selection {
       background: rgba(0, 122, 255, 0.3);
       color: #fff;
     }
-    
+
     /* Base styles */
     body {
       font-size: 17px;
@@ -66,7 +63,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
+
     .hero-tagline {
       font-size: 18px;
       color: #94a3b8;
@@ -117,7 +114,7 @@
     .center-text {
       text-align: center;
     }
-    
+
     /* Social links enhancement */
     .social-links {
       display: flex;
@@ -155,18 +152,18 @@
     .bio {
       margin-top: 2em;
     }
-    
+
     .bio p {
       margin-bottom: 0.8em;
       line-height: 1.7;
       color: #cbd5e1;
     }
-    
+
     .bio-highlight {
       font-weight: 600;
       color: #7cb3fc;
     }
-    
+
     .bio-section {
       margin-bottom: 1em;
     }
@@ -185,7 +182,7 @@
       position: relative;
       color: #64748b;
     }
-    
+
     .footer::before {
       content: '';
       position: absolute;
@@ -197,7 +194,7 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
     }
-    
+
     /* Back to top button - removed */
     .back-to-top {
       display: none;
@@ -220,7 +217,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       position: relative;
     }
-    
+
     .paper:last-of-type {
       border-bottom: none;
     }
@@ -243,15 +240,15 @@
     .paper-details {
       flex: 2;
     }
-    
+
     .paper-details strong {
       color: #e0e0e0;
     }
-    
+
     .paper-details p:first-of-type {
       color: #d0d0d0;
     }
-    
+
     .paper-details em {
       color: #94a3b8;
       font-style: italic;
@@ -260,14 +257,14 @@
       display: inline-block;
       margin-bottom: 0.8em;
     }
-    
+
     .paper-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5em;
       margin: 0.4em 0 0.4em 0;
     }
-    
+
     .paper-link {
       display: inline-flex;
       align-items: center;
@@ -285,7 +282,7 @@
       color: #a8cbfd;
       text-decoration: none;
     }
-    
+
     .paper-description {
       color: #94a3b8;
       line-height: 1.7;
@@ -299,13 +296,13 @@
       flex-direction: column;
       gap: 1.5em;
     }
-    
+
     .talk-item {
       padding: 0;
       margin: 0;
       line-height: 1.6;
     }
-    
+
     .talk-venue {
       color: #94a3b8;
       font-size: 0.9em;
@@ -334,7 +331,7 @@
       /* Prevent CLS from font loading */
       min-height: 100px;
     }
-    
+
     .contact-info a {
       position: relative;
       display: inline-block;
@@ -374,7 +371,7 @@
     .copy-btn.copied {
       color: #34d399;
     }
-    
+
     /* No animations for cleaner Apple style */
     .fade-in {
       opacity: 1;
@@ -385,14 +382,14 @@
       .social-links {
         gap: 0.4em;
       }
-      
+
       .social-link {
         padding: 0.25em 0.5em;
         font-size: 0.8em;
         gap: 0.25em;
       }
     }
-    
+
     /* Mobile responsive styles */
     @media (max-width: 768px) {
       body {
@@ -458,14 +455,14 @@
         -webkit-overflow-scrolling: touch;
         gap: 0.5em;
       }
-      
+
       .social-link {
         flex-shrink: 0;
         padding: 0.3em 0.6em;
         font-size: 0.85em;
         white-space: nowrap;
       }
-      
+
       .center-text {
         font-size: 14px;
         line-height: 2;
@@ -517,108 +514,170 @@
       }
     }
   </style>
-</head>
-
+<style>
+* { box-sizing: border-box; }
+.page { max-width: 980px; padding: 16px 28px 32px; margin: auto; }
+.headshot-link { display:block; flex:none; border-radius:50%; }
+.headshot-link .headshot { display:block; margin:0; }
+.headshot { width:144px; height:144px; }
+.header { padding:24px 0 12px; margin:0; }
+.social-links { flex-wrap:wrap; overflow:visible; gap:0 16px; margin:8px 0; }
+.social-link, .publication-links a, .paper-link, .copy-btn, .section-nav a {
+  min-height:44px; display:inline-flex; align-items:center; }
+.publication-links { gap:7px; }
+.section-nav { display:flex; gap:24px; justify-content:center; align-items:center; }
+.section-nav a { font-size:15px; }
+.bio { margin-top:20px; }
+.section-divider { margin:28px 0; }
+h2 { color:#e8eaed; font-size:25px; margin:24px 0 8px; }
+h2, article { scroll-margin-top:16px; }
+.paper { display:grid; grid-template-columns:clamp(200px,28vw,292px) minmax(0,1fr);
+  grid-template-rows:auto auto 1fr; column-gap:28px; align-items:start;
+  padding:24px 0; margin:0; }
+.paper-image { grid-column:1; grid-row:1 / 4; width:100%; max-width:none; margin:0; }
+.paper-image img { display:block; }
+.paper h3, .byline, .paper-details { grid-column:2; text-align:left; min-width:0; }
+.paper h3 { grid-row:1; font-size:20px; line-height:1.37; margin:0 0 6px; }
+.byline { grid-row:2; }
+.byline p { color:#d0d0d0; }
+.byline em { color:#94a3b8; font-size:14px; line-height:1.5; }
+.paper-details { grid-row:3; }
+.paper-meta { gap:0 18px; margin:2px 0; }
+.paper-link, .copy-btn { margin:0; padding:0 2px; }
+.paper-description { margin:3px 0 0; }
+:focus-visible { outline:2px solid #a8cbfd; outline-offset:2px; border-radius:3px; }
+@media (max-width:768px) {
+  .paper-details p { margin-top:4px; }
+  .paper-details p, .byline p { text-align:left; }
+  .talks-list, .bio { padding:0; }
+  .social-link { padding:0 4px; font-size:14px; }
+  .header-text { min-height:0; }
+}
+@media (min-width:601px) {
+  .header { flex-direction:row; }
+  .headshot-link { margin:0 24px 0 0; }
+  .header-text { text-align:left; }
+}
+@media (max-width:600px) {
+  .page { padding:0 18px 20px; }
+  .header { display:grid; grid-template-columns:80px 1fr; gap:14px; padding:24px 0 8px; }
+  .headshot { width:80px; height:80px; margin:0; }
+  .header-text { display:contents; }
+  .headshot-link { grid-row:1 / 3; }
+  .main-name { grid-column:2; align-self:end; font-size:clamp(23px,6.8vw,30px); line-height:1.1; text-align:left; }
+  .hero-tagline { margin:0; align-self:start; font-size:16px; text-align:left; }
+  .contact-info { grid-column:1 / -1; margin:0; text-align:left; }
+  .contact-info a { font-size:15px; }
+  .section-nav, .social-links { justify-content:flex-start; }
+  .social-links { gap:0 9px; margin:0; }
+  .bio { margin-top:12px; }
+  .section-divider { margin:22px 0; }
+  .paper { grid-template-columns:clamp(80px,27vw,132px) minmax(0,1fr);
+    grid-template-rows:auto auto auto; align-items:start; gap:8px 14px; padding:20px 0; }
+  .paper h3 { font-size:19px; grid-column:1/-1; margin:0; }
+  .paper-image { grid-row:2; }
+  .byline { grid-column:2; grid-row:2; font-size:14px; }
+  .byline p, .byline p a { font-size:14px; }
+  .paper-details { grid-column:1/-1; }
+  .paper-meta { column-gap:14px; }
+}
+@media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto;}}
+</style></head>
 <body>
-  <div style="max-width: 880px; margin: 0 auto; padding: 1em;">
-    <!-- Header -->
-    <div class="header">
-      <img src="images/nolan-headshot.webp" alt="Nolan Koblischke" class="headshot" width="900" height="900">
-      <div class="header-text">
-        <p class="main-name">Nolan Koblischke</p>
-        <p class="hero-tagline">AI + astrophysics</p>
-        <p class="contact-info">
-          <a href="mailto:nolan.koblischke@mail.utoronto.ca">nolan.koblischke@mail.utoronto.ca</a>
-        </p>
-      </div>
-    </div>
+<main class="page">
+<!-- Header -->
+<div class="header">
+<a class="headshot-link" href="images/Nolan-Koblischke-headshot.png" aria-label="Open full-size headshot of Nolan Koblischke">
+  <img alt="Nolan Koblischke" class="headshot" height="900" src="images/Nolan-Koblischke-headshot.png" width="900"/>
+</a>
+<div class="header-text">
+<h1 class="main-name">Nolan Koblischke</h1>
+<p class="hero-tagline">AI + astrophysics</p>
+<p class="contact-info">
+<a href="mailto:nolan.koblischke@mail.utoronto.ca">nolan.koblischke@mail.utoronto.ca</a>
+</p>
+</div>
+</div>
+<!-- Social Links -->
+<nav aria-label="Profiles and CV" class="social-links">
+<a class="social-link" href="https://blog.nolank.ca/blog/">📝 Blog</a>
+<a class="social-link" href="https://www.linkedin.com/in/nolankob/">💼 LinkedIn</a>
+<a aria-label="X (Twitter)" class="social-link" href="https://twitter.com/astro_nolan">𝕏</a>
+<a class="social-link" href="https://github.com/NolanKoblischke/">💻 GitHub</a>
+<a class="social-link" href="assets/files/cv.pdf">📄 CV</a>
+<span class="social-link publication-links">
+<a href="https://scholar.google.com/citations?user=239WPlwAAAAJ">🎓 Scholar</a>
+<span aria-hidden="true">/</span>
+<a href="https://scixplorer.org/search?q=author%3A%22Koblischke%2C+Nolan%22&amp;sort=date+desc&amp;d=general">SciX</a>
+</span>
+</nav><nav aria-label="On this page" class="section-nav"><a href="#research">Research</a><a href="#talks">Talks</a></nav>
+<!-- Bio -->
+<div class="bio">
+<div class="bio-section">
+<p><span class="bio-highlight">Now (as of Nov. 2026):</span> Working on language models for discovery in astronomy.</p>
+<p><span class="bio-highlight">PhD:</span> Astrophysics @ Toronto - Advisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a> - Expected 2028</p>
+<p><span class="bio-highlight">Latest News:</span> Organizing <a href="https://ml4physicalsciences.github.io/2026/">ML4PS 2026</a>. <a href="https://openai.com/index/introducing-chatgpt-futures-class-of-2026/">ChatGPT Futures</a> award and <a href="https://youtu.be/LF22szp7ouo">Universe Today interview</a>.</p>
+</div>
+<div class="bio-section">
+<p><span class="bio-highlight">Tools:</span> <a href="https://galaxywiki.nolank.ca/">GalaxyWiki</a> - <a href="https://astronolan-aion-search.hf.space/">AION-Search</a> - <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a> - <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a> - <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
+</div>
+</div>
+<!-- Section Divider -->
+<div class="section-divider"></div>
+<!-- Papers -->
+<h2 id="research">Research</h2><article class="paper" id="galaxywiki"><h3>GalaxyWiki: Extracting Published Discussions of 13,616 Galaxies with Language Models</h3>
+<div class="paper-image">
+<a href="https://arxiv.org/html/2611.13118v1/galaxywiki_header_summary.png">
+<img alt="GalaxyWiki Figure 1 with the rightmost column of four galaxy thumbnails and the literature summary and source excerpt for NGC 4650A" height="517" loading="lazy" src="images/galaxywiki.webp" width="1208"/>
+</a>
+</div>
+<div class="byline">
 
-    <!-- Social Links -->
-    <div class="social-links">
-      <a href="https://blog.nolank.ca/blog/" class="social-link">📝 Blog</a>
-      <a href="https://www.linkedin.com/in/nolankob/" class="social-link">💼 LinkedIn</a>
-      <a href="https://twitter.com/astro_nolan" class="social-link">𝕏</a>
-      <a href="https://github.com/NolanKoblischke/" class="social-link">💻 GitHub</a>
-      <a href="assets/files/cv.pdf" class="social-link">📄 CV</a>
-      <span class="social-link publication-links">
-        <a href="https://scholar.google.com/citations?user=239WPlwAAAAJ">🎓 Scholar</a>
-        <span aria-hidden="true">/</span>
-        <a href="https://scixplorer.org/search?q=author%3A%22Koblischke%2C+Nolan%22&amp;sort=date+desc&amp;d=general">SciX</a>
-      </span>
-    </div>
-
-    <!-- Bio -->
-    <div class="bio">
-      <div class="bio-section">
-        <p><span class="bio-highlight">Now (as of Nov. 2026):</span> Working on language models for discovery in astronomy.</p>
-        <p><span class="bio-highlight">PhD:</span> Astrophysics @ Toronto - Advisor: <a href="https://www.astro.utoronto.ca/~bovy/">Jo Bovy</a> - Expected 2028</p>
-        <p><span class="bio-highlight">Latest News:</span> Organizing <a href="https://ml4physicalsciences.github.io/2026/">ML4PS 2026</a>. <a href="https://openai.com/index/introducing-chatgpt-futures-class-of-2026/">ChatGPT Futures</a> award and <a href="https://youtu.be/LF22szp7ouo">Universe Today interview</a>.</p>
-      </div>
-      
-      <div class="bio-section">
-        <p><span class="bio-highlight">Tools:</span> <a href="https://galaxywiki.nolank.ca/">GalaxyWiki</a> - <a href="https://astronolan-aion-search.hf.space/">AION-Search</a> - <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">ChatGaia</a> - <a href="https://chatgpt.com/g/g-BLIbeS205-chatads">ChatADS</a> - <a href="https://nolank.ca/astrocoder/">AstroCoder</a></p>
-      </div>
-    </div>
-
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Papers -->
-    <div class="paper" id="galaxywiki">
-      <div class="paper-image">
-        <a href="https://arxiv.org/html/2611.13118v1/galaxywiki_header_summary.png" target="_blank">
-          <img src="images/galaxywiki.webp" alt="GalaxyWiki Figure 1 with the rightmost column of four galaxy thumbnails and the literature summary and source excerpt for NGC 4650A" width="1208" height="517" loading="lazy">
-        </a>
-      </div>
-      <div class="paper-details">
-        <papertitle>GalaxyWiki: Extracting Published Discussions of 13,616 Galaxies with Language Models</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Jo Bovy</p>
-        <em>Workshop on Artificial Intelligence for Scientific Publications (WASP 2026)</em>
-        <div class="paper-meta">
-          <a href="https://galaxywiki.nolank.ca/" target="_blank" class="paper-link">🔍 Explore GalaxyWiki</a>
-          <a href="https://arxiv.org/abs/2611.13118" target="_blank" class="paper-link">📄 Paper</a>
-          <a href="https://github.com/NolanKoblischke/galaxywiki-paper" target="_blank" class="paper-link">💻 Code &amp; Data</a>
-        </div>
-        <p class="paper-description">
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Jo Bovy</p>
+<em>Workshop on Artificial Intelligence for Scientific Publications (WASP 2026)</em>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://galaxywiki.nolank.ca/">🔍 Explore GalaxyWiki</a>
+<a class="paper-link" href="https://arxiv.org/abs/2611.13118">📄 Paper</a>
+<a class="paper-link" href="https://github.com/NolanKoblischke/galaxywiki-paper">💻 Code &amp; Data</a>
+</div>
+<p class="paper-description">
           Our attempt at extracting everything ever said about every galaxy. GalaxyWiki brings together more than 44,000 discussions of 13,616 galaxies, with excerpts and links to the original papers.
         </p>
-      </div>
-    </div>
+</div>
+</article>
+<article class="paper" id="interesting-galaxies"><h3>Identifying Scientifically Interesting Galaxies with Vision-Language Models</h3>
+<div class="paper-image">
+<a href="images/interesting-galaxies.webp"><img alt="A two-by-two montage of three DESI Legacy Imaging Surveys DR10 galaxies and a black-and-white Hubble image of the strong gravitational lens SDSS J1205+4910" height="808" loading="lazy" src="images/interesting-galaxies.webp" width="808"/></a>
+</div>
+<div class="byline">
 
-    <div class="paper" id="interesting-galaxies">
-      <div class="paper-image">
-        <img src="images/interesting-galaxies.webp" alt="A two-by-two montage of three DESI Legacy Imaging Surveys DR10 galaxies and a black-and-white Hubble image of the strong gravitational lens SDSS J1205+4910" width="808" height="808" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>Identifying Scientifically Interesting Galaxies with Vision-Language Models</papertitle>
-        <p style="margin: 0 0 0.4em 0;">Yixuan Cheng, <strong>Nolan Koblischke</strong>, Jo Bovy</p>
-        <em>Machine Learning and the Physical Sciences (ML4PS 2026)</em>
-        <div class="paper-meta">
-          <a href="https://arxiv.org/abs/2610.37747" target="_blank" class="paper-link">📄 Paper</a>
-          <a href="https://github.com/TheCheng2005/Galaxy-Anomaly-Search" target="_blank" class="paper-link">💻 Code</a>
-          <a href="https://huggingface.co/datasets/astronolan/hubble-anomaly" target="_blank" class="paper-link">🗂️ Dataset</a>
-        </div>
-        <p class="paper-description">
+<p style="margin: 0 0 0.4em 0;">Yixuan Cheng, <strong>Nolan Koblischke</strong>, Jo Bovy</p>
+<em>Machine Learning and the Physical Sciences (ML4PS 2026)</em>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://arxiv.org/abs/2610.37747">📄 Paper</a>
+<a class="paper-link" href="https://github.com/TheCheng2005/Galaxy-Anomaly-Search">💻 Code</a>
+<a class="paper-link" href="https://huggingface.co/datasets/astronolan/hubble-anomaly">🗂️ Dataset</a>
+</div>
+<p class="paper-description">
           We ranked Hubble images by scientific interest with vision-language models. Gemini recovered 98.2% of 167 reference anomalies in the 2,095 highest-scoring images.
         </p>
-      </div>
-    </div>
+</div>
+</article>
+<article class="paper"><h3>AION-Search: Semantic Search for 100M+ Galaxy Images Using AI-Generated Captions</h3>
+<div class="paper-image">
+<a href="images/aionsearch.webp"><img alt="AION-Search" height="888" loading="lazy" src="images/aionsearch.webp" width="1600"/></a>
+</div>
+<div class="byline">
 
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/aionsearch.webp" alt="AION-Search" width="1600" height="888" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>AION-Search: Semantic Search for 100M+ Galaxy Images Using AI-Generated Captions</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Liam Parker, Francois Lanusse, Irina Espejo Morales, Jo Bovy, Shirley Ho</p>
-        <em>The Astrophysical Journal</em>
-        <div class="paper-meta">
-          <a href="https://aion-search.github.io/" target="_blank" class="paper-link">📝 Blog Post</a>
-          <a href="https://astronolan-aion-search.hf.space/" target="_blank" class="paper-link">🔍 Search App</a>
-          <a href="https://arxiv.org/abs/2512.11982" target="_blank" class="paper-link">📄 Paper</a>
-          <a href="https://github.com/NolanKoblischke/AION-Search" target="_blank" class="paper-link">💻 Code</a>
-          <a href="https://youtu.be/LF22szp7ouo" target="_blank" class="paper-link">🎬 Interview</a>
-          <button type="button" class="copy-btn" data-bibtex="@article{Koblischke_2026,
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Liam Parker, Francois Lanusse, Irina Espejo Morales, Jo Bovy, Shirley Ho</p>
+<em>The Astrophysical Journal</em>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://aion-search.github.io/">📝 Blog Post</a>
+<a class="paper-link" href="https://astronolan-aion-search.hf.space/">🔍 Search App</a>
+<a class="paper-link" href="https://arxiv.org/abs/2512.11982">📄 Paper</a>
+<a class="paper-link" href="https://github.com/NolanKoblischke/AION-Search">💻 Code</a>
+<a class="paper-link" href="https://youtu.be/LF22szp7ouo">🎬 Interview</a>
+<button class="copy-btn" data-bibtex="@article{Koblischke_2026,
       doi={10.3847/1538-4357/ae7b22},
       url={https://doi.org/10.3847/1538-4357/ae7b22},
       year={2026},
@@ -630,96 +689,91 @@
       author={Koblischke, Nolan and Parker, Liam and Lanusse, Francois and Bovy, Jo and Espejo, Irina and Ho, Shirley},
       title={Semantic Search for 100M+ Galaxy Images Using AI-generated Captions},
       journal={The Astrophysical Journal}
-}">📋 BibTeX</button>
-        </div>
-        <p class="paper-description">
+}" type="button">📋 BibTeX</button>
+</div>
+<p class="paper-description">
           A text-based search engine for galaxy images trained on AI-generated captions. Enables flexible semantic search for rare phenomena without manual labeling.
         </p>
-      </div>
-    </div>
+</div>
+</article>
+<article class="paper"><h3>Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents</h3>
+<div class="paper-image">
+<a href="images/gravitybench.webp"><img alt="GravityBench" height="794" loading="lazy" src="images/gravitybench.webp" width="1600"/></a>
+</div>
+<div class="byline">
 
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/gravitybench.webp" alt="GravityBench" width="1600" height="794" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Hyunseok Jang, Kristen Menou, Mohamad Ali-Dib</p>
-        <em>ICML 2025</em>
-        <div class="paper-meta">
-          <a href="https://gravitybench.github.io/" target="_blank" class="paper-link">📝 Blog Post</a>
-          <a href="https://arxiv.org/abs/2501.18411" target="_blank" class="paper-link">📄 Paper</a>
-          <button type="button" class="copy-btn" data-bibtex="@misc{koblischke2025gravitybench,
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Hyunseok Jang, Kristen Menou, Mohamad Ali-Dib</p>
+<em>ICML 2025</em>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://gravitybench.github.io/">📝 Blog Post</a>
+<a class="paper-link" href="https://arxiv.org/abs/2501.18411">📄 Paper</a>
+<button class="copy-btn" data-bibtex="@misc{koblischke2025gravitybench,
       title={Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents},
       author={Koblischke, Nolan and Jang, Hyunseok and Menou, Kristen and Ali-Dib, Mohamad},
       year={2025},
       archivePrefix={arXiv},
       eprint={2501.18411},
       url={https://arxiv.org/abs/2501.18411}
-}">📋 BibTeX</button>
-        </div>
-        <p class="paper-description">
+}" type="button">📋 BibTeX</button>
+</div>
+<p class="paper-description">
           A benchmark that challenges AI agents on gravitational physics discovery tasks, evaluating scientific reasoning and observational planning capabilities within controlled, physics-based environments.
         </p>
-      </div>
-    </div>
+</div>
+</article>
+<article class="paper"><h3>AstroCoder: AI-Powered Discovery and Usage of Astronomy Software</h3>
+<div class="paper-image">
+<a href="images/astrocoder.webp"><img alt="AstroCoder" height="1503" loading="lazy" src="images/astrocoder.webp" width="1600"/></a>
+</div>
+<div class="byline">
 
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/astrocoder.webp" alt="AstroCoder" width="1600" height="1503" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>AstroCoder: AI-Powered Discovery and Usage of Astronomy Software</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Mugdha Polimera, Maja Jablonska, Sergi Blanco-Cuaresma, Hilke Reckman, Ioana Ciuca & <a href="https://universetbd.org/">UniverseTBD</a></p>
-        <em>Application - April 10, 2025</em>
-        <div class="paper-meta">
-          <a href="https://nolank.ca/astrocoder/" target="_blank" class="paper-link">🚀 Try AstroCoder</a>
-          <a href="https://blog.nolank.ca/astrocoder/" target="_blank" class="paper-link">📚 Technical Details</a>
-        </div>
-        <p class="paper-description">
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Mugdha Polimera, Maja Jablonska, Sergi Blanco-Cuaresma, Hilke Reckman, Ioana Ciuca &amp; <a href="https://universetbd.org/">UniverseTBD</a></p>
+<em>Application - April 10, 2025</em>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://nolank.ca/astrocoder/">🚀 Try AstroCoder</a>
+<a class="paper-link" href="https://blog.nolank.ca/astrocoder/">📚 Technical Details</a>
+</div>
+<p class="paper-description">
           Transforming how astronomers discover code: AI-powered search across 2,270 astronomy tools. From finding the right package to generating working examples in seconds.
         </p>
-      </div>
-    </div>
+</div>
+</article>
+<article class="paper"><h3>SpectraFM: Tuning into Stellar Foundation Models</h3>
+<div class="paper-image">
+<a href="images/spectrafm.webp"><img alt="SpectraFM" height="1680" loading="lazy" src="images/spectrafm.webp" width="1600"/></a>
+</div>
+<div class="byline">
 
-
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/spectrafm.webp" alt="SpectraFM" width="1600" height="1680" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>SpectraFM: Tuning into Stellar Foundation Models</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Jo Bovy</p>
-        <em>NeurIPS 2024 Workshop: Foundation Models for Science</em>
-        <div class="paper-meta">
-          <a href="https://arxiv.org/abs/2411.04750" target="_blank" class="paper-link">📄 arXiv:2411.04750</a>
-          <button type="button" class="copy-btn" data-bibtex="@misc{koblischke2024spectrafmtuningstellarfoundation,
-      title={SpectraFM: Tuning into Stellar Foundation Models}, 
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Jo Bovy</p>
+<em>NeurIPS 2024 Workshop: Foundation Models for Science</em>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://arxiv.org/abs/2411.04750">📄 arXiv:2411.04750</a>
+<button class="copy-btn" data-bibtex="@misc{koblischke2024spectrafmtuningstellarfoundation,
+      title={SpectraFM: Tuning into Stellar Foundation Models},
       author={Nolan Koblischke and Jo Bovy},
       year={2024},
       eprint={2411.04750},
       archivePrefix={arXiv},
       primaryClass={astro-ph.IM},
-      url={https://arxiv.org/abs/2411.04750}, 
-}">📋 BibTeX</button>
-        </div>
-        <p class="paper-description">
+      url={https://arxiv.org/abs/2411.04750},
+}" type="button">📋 BibTeX</button>
+</div>
+<p class="paper-description">
           A Transformer-based model capable of processing stellar spectra across any wavelength range.
         </p>
-      </div>
-    </div>
+</div>
+</article>
+<article class="paper"><h3>Calibrating and standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud using small-amplitude red giants</h3>
+<div class="paper-image">
+<a href="images/smc.webp"><img alt="SMC" height="1528" loading="lazy" src="images/smc.webp" width="1600"/></a>
+</div>
+<div class="byline">
 
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/smc.webp" alt="SMC" width="1600" height="1528" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>Calibrating and standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud using small-amplitude red giants</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Richard I. Anderson</p>
-        <em>Astrophysical Journal</em>, 2024
-        <div class="paper-meta">
-          <a href="https://arxiv.org/abs/2406.19375" target="_blank" class="paper-link">📄 arXiv:2406.19375</a>
-          <button type="button" class="copy-btn" data-bibtex="@article{Koblischke_2024,
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong>, Richard I. Anderson</p>
+<em>Astrophysical Journal</em>, 2024
+        </div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://arxiv.org/abs/2406.19375">📄 arXiv:2406.19375</a>
+<button class="copy-btn" data-bibtex="@article{Koblischke_2024,
    title={Calibrating and Standardizing the Tip of the Red Giant Branch in the Small Magellanic Cloud Using Small-amplitude Red Giants},
    volume={974},
    ISSN={1538-4357},
@@ -730,24 +784,24 @@
    publisher={American Astronomical Society},
    author={Koblischke, Nolan W. and Anderson, Richard I.},
    year={2024},
-   month=oct, pages={181} }">📋 BibTeX</button>
-        </div>
-        <p class="paper-description">
+   month=oct, pages={181} }" type="button">📋 BibTeX</button>
+</div>
+<p class="paper-description">
           Discovered that pulsation impacts the TRGB in the SMC as in the LMC, with older, longer period pulsators leading to a highly accurate TRGB tip measurement.
         </p>
-      </div>
-    </div>
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/lmc.webp" alt="LMC" width="1600" height="1578" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle</papertitle>
-        <p style="margin: 0 0 0.4em 0;">Richard I. Anderson, <strong>Nolan Koblischke</strong>, Laurent Eyer</p>
-        <em>Astrophysical Journal Letters</em>, 2024
-        <div class="paper-meta">
-          <a href="https://arxiv.org/abs/2303.04790" target="_blank" class="paper-link">📄 arXiv:2303.04790</a>
-          <button type="button" class="copy-btn" data-bibtex="@article{Anderson_2024,
+</div>
+</article>
+<article class="paper"><h3>Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle</h3>
+<div class="paper-image">
+<a href="images/lmc.webp"><img alt="LMC" height="1578" loading="lazy" src="images/lmc.webp" width="1600"/></a>
+</div>
+<div class="byline">
+
+<p style="margin: 0 0 0.4em 0;">Richard I. Anderson, <strong>Nolan Koblischke</strong>, Laurent Eyer</p>
+<em>Astrophysical Journal Letters</em>, 2024
+        </div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://arxiv.org/abs/2303.04790">📄 arXiv:2303.04790</a>
+<button class="copy-btn" data-bibtex="@article{Anderson_2024,
 doi = {10.3847/2041-8213/ad284d},
 url = {https://dx.doi.org/10.3847/2041-8213/ad284d},
 year = {2024},
@@ -759,95 +813,76 @@ pages = {L43},
 author = {Anderson, Richard I. and Koblischke, Nolan W. and Eyer, Laurent},
 title = {Small-amplitude Red Giants Elucidate the Nature of the Tip of the Red Giant Branch as a Standard Candle},
 journal = {The Astrophysical Journal Letters}
-}">📋 BibTeX</button>
-        </div>
-        <p class="paper-description">
+}" type="button">📋 BibTeX</button>
+</div>
+<p class="paper-description">
           Discovered that red giant pulsation adds a new dimension of the TRGB method, leading to an enhanced method for measuring the Universe's expansion rate.
         </p>
-        <p>
-          Featured in: 
-          <a href="https://actu.epfl.ch/news/the-baritone-of-red-giants-refines-cosmic-distance/" target="_blank">EPFL News</a>,
-          <a href="https://www.space.com/singing-red-stars-universe-expansion-measurements" target="_blank">Space.com</a>,
-          <a href="https://www.universetoday.com/166270/red-giants-offer-a-new-way-to-measure-distance-in-the-universe/" target="_blank">Universe Today</a>,
-          <a href="https://phys.org/news/2024-03-baritone-red-giants-refines-cosmic.html" target="_blank">Phys.org</a>,
-          <a href="https://www.techexplorist.com/fresh-look-red-giant-stars-key-insights-cosmic-distance-measurements/82137/" target="_blank">Tech Explorist</a>,
-          <a href="https://www.myscience.org/en/news/2024/the_baritone_of_red_giants_refines_cosmic_distance_measurements-2024-epfl" target="_blank">MyScience</a>
-        </p>
-      </div>
-    </div>
+<p>
+          Featured in:
+          <a href="https://actu.epfl.ch/news/the-baritone-of-red-giants-refines-cosmic-distance/">EPFL News</a>,
+          <a href="https://www.space.com/singing-red-stars-universe-expansion-measurements">Space.com</a>,
+          <a href="https://www.universetoday.com/166270/red-giants-offer-a-new-way-to-measure-distance-in-the-universe/">Universe Today</a>,
+          <a href="https://phys.org/news/2024-03-baritone-red-giants-refines-cosmic.html">Phys.org</a>,
+          <a href="https://www.techexplorist.com/fresh-look-red-giant-stars-key-insights-cosmic-distance-measurements/82137/">Tech Explorist</a>,
+          <a href="https://www.myscience.org/en/news/2024/the_baritone_of_red_giants_refines_cosmic_distance_measurements-2024-epfl">MyScience</a>
+</p>
+</div>
+</article>
+<article class="paper"><h3>ChatGaia: Natural Language Interface to the Gaia Space Telescope</h3>
+<div class="paper-image">
+<a href="images/chatgaia.webp"><img alt="ChatGaia" height="985" loading="lazy" src="images/chatgaia.webp" width="1600"/></a>
+</div>
+<div class="byline">
 
-    <div class="paper">
-      <div class="paper-image">
-        <img src="images/chatgaia.webp" alt="ChatGaia" width="1600" height="985" loading="lazy">
-      </div>
-      <div class="paper-details">
-        <papertitle>ChatGaia: Natural Language Interface to the Gaia Space Telescope</papertitle>
-        <p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong></p>
-        <div class="paper-meta">
-          <a href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia" target="_blank" class="paper-link">🌌 Try ChatGaia</a>
-          <a href="https://x.com/astro_nolan/status/1722578960922345892" target="_blank" class="paper-link">𝕏 Announcement</a>
-        </div>
-        <p class="paper-description">
+<p style="margin: 0 0 0.4em 0;"><strong>Nolan Koblischke</strong></p>
+</div><div class="paper-details"><div class="paper-meta">
+<a class="paper-link" href="https://chatgpt.com/g/g-aYZOjK5zy-chatgaia">🌌 Try ChatGaia</a>
+<a class="paper-link" href="https://x.com/astro_nolan/status/1722578960922345892">𝕏 Announcement</a>
+</div>
+<p class="paper-description">
           Making 2 billion stars queryable through conversation. Reached 70,000+ viewers and used thousands of times.
         </p>
-      </div>
-    </div>
-
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Talks -->
-    <heading>Talks</heading>
-    <div class="talks-list">
-      <p class="talk-item"><a href="https://www.youtube.com/watch?v=yY1cCh4P3DE" target="_blank">Semantic search for 100M+ galaxy images using AI-generated captions</a><br><span class="talk-venue">Talk, Harvard-Smithsonian CfA, 2026</span></p>
-      <p class="talk-item"><a href="https://youtu.be/LF22szp7ouo" target="_blank">Teaching ChatGPT to Do Real Science</a><br><span class="talk-venue">Fraser Cain / Universe Today Podcast</span></p>
-      <p class="talk-item"><a href="https://vectorinstitute.ai/foundation-models-science-workshop-recap/" target="_blank">Panelist, "AI & Physics: Learning from Each Other" (Not recorded)</a><br><span class="talk-venue">Vector Institute Foundation Models for Science, Toronto, 2025</span></p>
-      <p class="talk-item"><a href="https://pirsa.org/25040062" target="_blank">UniverseTBD & AstroCoder (10:00-)</a><br><span class="talk-venue">Theory + AI Symposium, Perimeter Institute</span></p>
-      <p class="talk-item"><a href="https://www.youtube.com/live/r-Or1kEM1wo" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br><span class="talk-venue">ESO Natural Language Processing in Astronomy</span></p>
-      <p class="talk-item"><a href="https://www.cosmos.esa.int/web/natural-language-processing-for-space-science/videos-recordings" target="_blank">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br><span class="talk-venue">NLP for Space Science Workshop, ESA/ESAC, Madrid</span></p>
-      <p class="talk-item"><a href="https://youtu.be/2BXLR-UYUns" target="_blank">SpectraFM: Tuning into Stellar Foundation Models</a><br><span class="talk-venue">AstroAI Workshop, Harvard-Smithsonian CfA</span></p>
-      <p class="talk-item"><a href="https://youtu.be/KG75DUmQ3pQ" target="_blank">ChatGaia: Talk to the Gaia Archive in Natural Language</a><br><span class="talk-venue">Debating the Potential of Machine Learning in Astronomical Surveys, Flatiron</span></p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>Template from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a></p>
-    </div>
-  </div>
-  
-
-  <!-- JavaScript for copy buttons and animations -->
-  <script>
+</div>
+</article>
+<!-- Section Divider -->
+<div class="section-divider"></div>
+<!-- Talks -->
+<h2 id="talks">Talks</h2>
+<div class="talks-list">
+<p class="talk-item"><a href="https://www.youtube.com/watch?v=yY1cCh4P3DE">Semantic search for 100M+ galaxy images using AI-generated captions</a><br/><span class="talk-venue">Talk, Harvard-Smithsonian CfA, 2026</span></p>
+<p class="talk-item"><a href="https://youtu.be/LF22szp7ouo">Teaching ChatGPT to Do Real Science</a><br/><span class="talk-venue">Fraser Cain / Universe Today Podcast</span></p>
+<p class="talk-item"><a href="https://vectorinstitute.ai/foundation-models-science-workshop-recap/">Panelist, "AI &amp; Physics: Learning from Each Other" (Not recorded)</a><br/><span class="talk-venue">Vector Institute Foundation Models for Science, Toronto, 2025</span></p>
+<p class="talk-item"><a href="https://pirsa.org/25040062">UniverseTBD &amp; AstroCoder (10:00-)</a><br/><span class="talk-venue">Theory + AI Symposium, Perimeter Institute</span></p>
+<p class="talk-item"><a href="https://www.youtube.com/live/r-Or1kEM1wo">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br/><span class="talk-venue">ESO Natural Language Processing in Astronomy</span></p>
+<p class="talk-item"><a href="https://www.cosmos.esa.int/web/natural-language-processing-for-space-science/videos-recordings">Gravity Bench: A Benchmark on Gravitational Physics Discovery for Agents</a><br/><span class="talk-venue">NLP for Space Science Workshop, ESA/ESAC, Madrid</span></p>
+<p class="talk-item"><a href="https://youtu.be/2BXLR-UYUns">SpectraFM: Tuning into Stellar Foundation Models</a><br/><span class="talk-venue">AstroAI Workshop, Harvard-Smithsonian CfA</span></p>
+<p class="talk-item"><a href="https://youtu.be/KG75DUmQ3pQ">ChatGaia: Talk to the Gaia Archive in Natural Language</a><br/><span class="talk-venue">Debating the Potential of Machine Learning in Astronomical Surveys, Flatiron</span></p>
+</div>
+<!-- Footer -->
+<div class="footer">
+<p>Template from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a></p>
+</div>
+</main>
+<!-- JavaScript for copy buttons and animations -->
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Open links in new tabs (skip mailto/tel/hash to avoid blank tabs)
-      document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href') || '';
-        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-
-        link.setAttribute('target', '_blank');
-
-        const rel = new Set((link.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
-        rel.add('noopener');
-        rel.add('noreferrer');
-        link.setAttribute('rel', Array.from(rel).join(' '));
-      });
-
       // Copy buttons functionality
       const copyButtons = document.querySelectorAll('.copy-btn');
-      
+
       copyButtons.forEach(button => {
         button.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          
+
           const originalText = this.innerHTML;
           const bibtex = this.getAttribute('data-bibtex');
-          
+
           navigator.clipboard.writeText(bibtex).then(() => {
             // Visual feedback
             this.innerHTML = '✅ Copied!';
             this.classList.add('copied');
-            
+
             // Reset after 2 seconds
             setTimeout(() => {
               this.innerHTML = originalText;
@@ -864,7 +899,7 @@ journal = {The Astrophysical Journal Letters}
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
-            
+
             this.innerHTML = '✅ Copied!';
             this.classList.add('copied');
             setTimeout(() => {
@@ -874,7 +909,7 @@ journal = {The Astrophysical Journal Letters}
           });
         });
       });
-      
+
       // Removed animations and back to top button for cleaner design
     });
   </script>
