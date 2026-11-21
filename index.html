@@ -141,6 +141,16 @@
       text-decoration: none;
     }
 
+    .publication-links a {
+      color: inherit;
+      font-size: inherit;
+      text-decoration: none;
+    }
+
+    .publication-links a:hover {
+      text-decoration: underline;
+    }
+
     /* Bio spacing */
     .bio {
       margin-top: 2em;
@@ -530,7 +540,11 @@
       <a href="https://twitter.com/astro_nolan" class="social-link">𝕏</a>
       <a href="https://github.com/NolanKoblischke/" class="social-link">💻 GitHub</a>
       <a href="assets/files/cv.pdf" class="social-link">📄 CV</a>
-      <a href="https://scholar.google.com/citations?user=239WPlwAAAAJ" class="social-link">🎓 Scholar</a>
+      <span class="social-link publication-links">
+        <a href="https://scholar.google.com/citations?user=239WPlwAAAAJ">🎓 Scholar</a>
+        <span aria-hidden="true">/</span>
+        <a href="https://scixplorer.org/search?q=author%3A%22Koblischke%2C+Nolan%22&amp;sort=date+desc&amp;d=general">SciX</a>
+      </span>
     </div>
 
     <!-- Bio -->
@@ -562,7 +576,7 @@
         <em>Workshop on Artificial Intelligence for Scientific Publications (WASP 2026)</em>
         <div class="paper-meta">
           <a href="https://galaxywiki.nolank.ca/" target="_blank" class="paper-link">🔍 Explore GalaxyWiki</a>
-          <a href="https://aclanthology.org/2026.wasp-1.19/" target="_blank" class="paper-link">📄 Paper</a>
+          <a href="https://arxiv.org/abs/2611.13118" target="_blank" class="paper-link">📄 Paper</a>
           <a href="https://github.com/NolanKoblischke/galaxywiki-paper" target="_blank" class="paper-link">💻 Code &amp; Data</a>
         </div>
         <p class="paper-description">
